@@ -3,7 +3,8 @@ import os
 import sys
 
 
-SRC_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+SRC_DIR = os.path.dirname(CURRENT_DIR)
 
 
 def load_version():
@@ -11,7 +12,7 @@ def load_version():
     logger = logging.getLogger(__name__)
 
     try:
-        with open(os.path.join(SRC_DIR, "version.txt")) as f:
+        with open(os.path.join(CURRENT_DIR, "version.txt")) as f:
             version = f.read().strip()
 
             if version.startswith("v"):
