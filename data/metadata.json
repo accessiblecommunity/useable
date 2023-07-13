@@ -1,0 +1,29 @@
+{
+	"issues_url": "https://github.com/accessiblecommunity/useable/issues",
+	"description": "associates people with disabilities' requirements for use with broader functional categories and known diabilities. This taxonomy crosses digital and physical spaces as well as accommodations in a way that previous categorizations have not. This type of mapping is needed to help build tools and resources to help the entire disability community.",
+	"references": [{
+		"name": "Functional Performance Criteria",
+		"url": "https://www.access-board.gov/ict/#302-functional-performance-criteria",
+		"org": "United States Section 508 Standards for Digital Accessibility"
+	}, {
+		"name": "Functional Performance Statements",
+		"url": "https://www.etsi.org/deliver/etsi_en/301500_301599/301549/03.01.01_60/en_301549v030101p.pdf",
+		"org": "European EN 301-549 Standards for Digital Accessibility"
+	}, {
+		"name": "The Listing of Impairments for adults",
+		"url": "https://www.ssa.gov/disability/professionals/bluebook/AdultListings.htm",
+		"org": "United States' Social Security Administration (SSA)"
+	}, {
+		"name": "The disability and accommodation taxonomy",
+		"url": "https://askjan.org/a-to-z.cfm",
+		"org": "Job Accommodation Network"
+	}, {
+		"name": "Guide to the List of Recognised Disabilities",
+		"url": "https://www.dss.gov.au/our-responsibilities/disability-and-carers/benefits-payments/carer-allowance/guide-to-the-list-of-recognised-disabilities",
+		"org": "Australian Government Department of Social Services"
+	}, {
+		"name": "Framework for Accessible Specification of Technologies (FAST)",
+		"url": "https://w3c.github.io/apa/fast/",
+		"org": "World Wide Web Consortium (W3C)"
+	}]
+}
