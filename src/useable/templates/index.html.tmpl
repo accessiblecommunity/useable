@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>useable {{ version }}</title>
+  <title>useable v{{ version }}</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,6 +11,9 @@
   <style>
     body {
       font-family: Archivo, sans-serif;
+    }
+    h1 .navbar-text {
+      font-size: 0.7em;
     }
     h2 {
       font-size: 1.8rem;
@@ -27,18 +30,20 @@
       content: "";
       display:block;
     }
+    .list-group.contents {
+      max-width: 30rem;
+      margin-left: 1rem;
+    }
   </style>
 </head>
 <body>
 
-
-
 <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top mb-3">
   <div class="container-fluid">
     <a class="visually-hidden-focusable nav-item" href="#main">Skip to Main Content</a>    
-    <h1 class="navbar-brand mx-3 my-1">
+    <h1 class="navbar-brand ms-3 mt-1">
       <a href="#" class="text-black"><b>use</b>able</a>
-      <span class="small">v{{ version }}</span>
+      <span class="navbar-text">v{{ version }}</span>
     </h1>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -67,6 +72,9 @@
             </li>
           </ul>
         </li>
+        <li class="nav-item">
+          <a class="nav-link icon-link" href="{{ metadata.repository }}"><img class="bi" src="./assets/github-mark.svg" aria-hidden="true"><span class="visually-hidden"> GitHub</span> Repository</a>
+        </li>
       </ul>
     </div>
   </div>
@@ -82,13 +90,12 @@
     {% endfor %}
     </ul>
   </p>
-  <p>We <a href="{{ metadata.issues_url }}">welcome comments and feedback</a> to encourage the establishment of a worldwide mapping to help build tools and solutions for people with disabilities. Please create or comment on any of the current GitHub issues.</p>
-
+  <p>We <a href="{{ metadata.repository }}/issues">welcome comments and feedback</a> to encourage the establishment of a worldwide mapping to help build tools and solutions for people with disabilities. Please create or comment on any of the current GitHub issues.</p>
   <p>If you'd prefer, you can download the structure of the taxonomy as a JSON document by clicking the download dropdown in the navbar at the top.</p>
 
   <h2 class="mt-5">Usage categories</h2>
-  <div class="mb-3 mx-4">
-    <div class="list-group list-group-flush">
+  <div class="mb-3">
+    <div class="list-group contents">
     {% for cat in taxonomy['categories'] %}
       <a class="list-group-item list-group-item-action" href="#{{ cat.name }}">{{ cat.name }}</a>
     {% endfor %}
@@ -100,7 +107,7 @@
     <h2 id="{{ cat.name }}" class="anchor">{{ cat.name }}</h2>
     {% if cat.description %}<p>{{ cat.description }}</p>{% endif %}
     <h3>Requirements for use</h3>
-    <div class="list-group" style="max-width: 30rem">
+    <div class="list-group contents">
       {% for req in cat['requirements'] %}
       <a href="#{{ cat.name }}-{{loop.index}}" class="list-group-item list-group-item-action">{{ req.name }}</a>
       {% endfor %}
@@ -110,9 +117,9 @@
       <h3 id="{{ cat.name }}-{{loop.index}}" class="anchor">{{ req.name }}</h3>
       {% if req.description %}<p>{{ req.description }}</p>{% endif %}
       <h4>Associated conditions and disabilities</h4>
-      <ul class="list-group list-group-flush">
+      <ul> <!-- class="list-group list-group-flush"> -->
         {% for condition in req['conditions'] %}
-          <li class="list-group-item">{{ condition }}</li>
+          <li>{{ condition }}</li>
         {% endfor %}
       </ul>
     </div>
