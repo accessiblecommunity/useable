@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>useable 0.0.1</title>
+  <title>useable v0.0.1-2-g2fe3960</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,6 +11,9 @@
   <style>
     body {
       font-family: Archivo, sans-serif;
+    }
+    h1 .navbar-text {
+      font-size: 0.7em;
     }
     h2 {
       font-size: 1.8rem;
@@ -27,18 +30,20 @@
       content: "";
       display:block;
     }
+    .list-group.contents {
+      max-width: 30rem;
+      margin-left: 1rem;
+    }
   </style>
 </head>
 <body>
 
-
-
 <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top mb-3">
   <div class="container-fluid">
     <a class="visually-hidden-focusable nav-item" href="#main">Skip to Main Content</a>    
-    <h1 class="navbar-brand mx-3 my-1">
+    <h1 class="navbar-brand ms-3 mt-1">
       <a href="#" class="text-black"><b>use</b>able</a>
-      <span class="small">v0.0.1</span>
+      <span class="navbar-text">v0.0.1-2-g2fe3960</span>
     </h1>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -103,6 +108,9 @@
             </li>
           </ul>
         </li>
+        <li class="nav-item">
+          <a class="nav-link icon-link" href="https://github.com/accessiblecommunity/useable"><img class="bi" src="./assets/github-mark.svg" aria-hidden="true"><span class="visually-hidden"> GitHub</span> Repository</a>
+        </li>
       </ul>
     </div>
   </div>
@@ -110,7 +118,7 @@
 
 <div class="container-md">
   <h2 class="anchor" id="main">Overview</h2>
-  <p><b>use</b>able, coordinated by <a href="https://www.accessiblecommunity.org">Accessible Community</a>, associates people with disabilities' requirements for use with broader functional categories and known diabilities. This taxonomy crosses digital and physical spaces as well as accommodations in a way that previous categorizations have not. This type of mapping is needed to help build tools and resources to help the entire disability community.</p>
+  <p><b>use</b>able, coordinated by <a href="https://www.accessiblecommunity.org">Accessible Community</a>, associates people with disabilities' requirements for use with broader functional categories and known disabilities and conditions. This taxonomy crosses digital and physical spaces as well as accommodations in a way that previous categorizations have not. This type of mapping is needed to help build tools and resources to help the entire disability community.</p>
   <p> The <b>use</b>able taxonomy is based around previous work in the fields of accessibility and accommodations:
     <ul>
     
@@ -120,21 +128,20 @@
     
       <li><a href="https://www.ssa.gov/disability/professionals/bluebook/AdultListings.htm">The Listing of Impairments for adults</a> provided by the United States' Social Security Administration (SSA).</li>
     
-      <li><a href="https://askjan.org/a-to-z.cfm">The disability and accommodation taxonomy</a> provided by the Job Accommodation Network.</li>
-    
       <li><a href="https://www.dss.gov.au/our-responsibilities/disability-and-carers/benefits-payments/carer-allowance/guide-to-the-list-of-recognised-disabilities">Guide to the List of Recognised Disabilities</a> provided by the Australian Government Department of Social Services.</li>
+    
+      <li><a href="https://askjan.org/a-to-z.cfm">The disability and accommodation taxonomy</a> provided by the Job Accommodation Network.</li>
     
       <li><a href="https://w3c.github.io/apa/fast/">Framework for Accessible Specification of Technologies (FAST)</a> provided by the World Wide Web Consortium (W3C).</li>
     
     </ul>
   </p>
   <p>We <a href="https://github.com/accessiblecommunity/useable/issues">welcome comments and feedback</a> to encourage the establishment of a worldwide mapping to help build tools and solutions for people with disabilities. Please create or comment on any of the current GitHub issues.</p>
-
   <p>If you'd prefer, you can download the structure of the taxonomy as a JSON document by clicking the download dropdown in the navbar at the top.</p>
 
   <h2 class="mt-5">Usage categories</h2>
-  <div class="mb-3 mx-4">
-    <div class="list-group list-group-flush">
+  <div class="mb-3">
+    <div class="list-group contents">
     
       <a class="list-group-item list-group-item-action" href="#Auditory">Auditory</a>
     
@@ -162,9 +169,9 @@
 
   <div>
     <h2 id="Auditory" class="anchor">Auditory</h2>
-    <p>A forthcoming description for Auditory.</p>
+    <p>A forthcoming description for auditory.</p>
     <h3>Requirements for use</h3>
-    <div class="list-group" style="max-width: 30rem">
+    <div class="list-group contents">
       
       <a href="#Auditory-1" class="list-group-item list-group-item-action">Limited hearing & auditory processing</a>
       
@@ -174,28 +181,28 @@
     
     <div>
       <h3 id="Auditory-1" class="anchor">Limited hearing & auditory processing</h3>
-      <p>A forthcoming description for Limited hearing & auditory processing.</p>
+      <p>A forthcoming description for limited hearing & auditory processing.</p>
       <h4>Associated conditions and disabilities</h4>
-      <ul class="list-group list-group-flush">
+      <ul> <!-- class="list-group list-group-flush"> -->
         
-          <li class="list-group-item">Aging</li>
+          <li>Aging</li>
         
-          <li class="list-group-item">Deafness</li>
+          <li>Deafness</li>
         
-          <li class="list-group-item">Hearing Impairment</li>
+          <li>Hearing Impairment</li>
         
-          <li class="list-group-item">Shingles</li>
+          <li>Shingles</li>
         
       </ul>
     </div>
     
     <div>
       <h3 id="Auditory-2" class="anchor">Without hearing</h3>
-      <p>A forthcoming description for Without hearing.</p>
+      <p>A forthcoming description for without hearing.</p>
       <h4>Associated conditions and disabilities</h4>
-      <ul class="list-group list-group-flush">
+      <ul> <!-- class="list-group list-group-flush"> -->
         
-          <li class="list-group-item">Deafness</li>
+          <li>Deafness</li>
         
       </ul>
     </div>
@@ -204,9 +211,9 @@
 
   <div>
     <h2 id="Cognitive" class="anchor">Cognitive</h2>
-    <p>A forthcoming description for Cognitive.</p>
+    <p>A forthcoming description for cognitive.</p>
     <h3>Requirements for use</h3>
-    <div class="list-group" style="max-width: 30rem">
+    <div class="list-group contents">
       
       <a href="#Cognitive-1" class="list-group-item list-group-item-action">Limited attention & concentration</a>
       
@@ -220,61 +227,61 @@
     
     <div>
       <h3 id="Cognitive-1" class="anchor">Limited attention & concentration</h3>
-      <p>A forthcoming description for Limited attention & concentration.</p>
+      <p>A forthcoming description for limited attention & concentration.</p>
       <h4>Associated conditions and disabilities</h4>
-      <ul class="list-group list-group-flush">
+      <ul> <!-- class="list-group list-group-flush"> -->
         
-          <li class="list-group-item">Aging</li>
+          <li>Aging</li>
         
-          <li class="list-group-item">Alcoholism</li>
+          <li>Alcoholism</li>
         
-          <li class="list-group-item">Anxiety Disorder</li>
+          <li>Anxiety Disorder</li>
         
-          <li class="list-group-item">Attention Deficit/Hyperactivity Disorder (AD/HD)</li>
+          <li>Attention Deficit/Hyperactivity Disorder (AD/HD)</li>
         
-          <li class="list-group-item">Auditory Processing Disorder</li>
+          <li>Auditory Processing Disorder</li>
         
-          <li class="list-group-item">Autism Spectrum</li>
+          <li>Autism Spectrum</li>
         
-          <li class="list-group-item">Bipolar Disorder</li>
+          <li>Bipolar Disorder</li>
         
-          <li class="list-group-item">Brain Injury</li>
+          <li>Brain Injury</li>
         
-          <li class="list-group-item">Depression</li>
+          <li>Depression</li>
         
-          <li class="list-group-item">Drug Addiction</li>
+          <li>Drug Addiction</li>
         
-          <li class="list-group-item">Eating Disorders</li>
+          <li>Eating Disorders</li>
         
-          <li class="list-group-item">Electrical Sensitivity</li>
+          <li>Electrical Sensitivity</li>
         
-          <li class="list-group-item">Fibromyalgia</li>
+          <li>Fibromyalgia</li>
         
-          <li class="list-group-item">Huntington's Disease</li>
+          <li>Huntington's Disease</li>
         
-          <li class="list-group-item">Lupus</li>
+          <li>Lupus</li>
         
-          <li class="list-group-item">Mental Health Conditions</li>
+          <li>Mental Health Conditions</li>
         
-          <li class="list-group-item">Multiple Sclerosis</li>
+          <li>Multiple Sclerosis</li>
         
-          <li class="list-group-item">Obsessive Compulsive Disorder (OCD)</li>
+          <li>Obsessive Compulsive Disorder (OCD)</li>
         
-          <li class="list-group-item">Phobias</li>
+          <li>Phobias</li>
         
-          <li class="list-group-item">Post-Traumatic Stress Disorder (PTSD)</li>
+          <li>Post-Traumatic Stress Disorder (PTSD)</li>
         
-          <li class="list-group-item">Postural Orthostatic Tachycardia Syndrome (POTS)</li>
+          <li>Postural Orthostatic Tachycardia Syndrome (POTS)</li>
         
-          <li class="list-group-item">Schizophrenia</li>
+          <li>Schizophrenia</li>
         
-          <li class="list-group-item">Seasonal Affective Disorder (SAD)</li>
+          <li>Seasonal Affective Disorder (SAD)</li>
         
-          <li class="list-group-item">Sleep Disorder</li>
+          <li>Sleep Disorder</li>
         
-          <li class="list-group-item">Stroke</li>
+          <li>Stroke</li>
         
-          <li class="list-group-item">Tourette Syndrome</li>
+          <li>Tourette Syndrome</li>
         
       </ul>
     </div>
@@ -283,81 +290,81 @@
       <h3 id="Cognitive-2" class="anchor">Limited executive functions</h3>
       <p>Includes planning, organization,  prioritizing, and time management</p>
       <h4>Associated conditions and disabilities</h4>
-      <ul class="list-group list-group-flush">
+      <ul> <!-- class="list-group list-group-flush"> -->
         
-          <li class="list-group-item">Alcoholism</li>
+          <li>Alcoholism</li>
         
-          <li class="list-group-item">Alzheimer's Disease</li>
+          <li>Alzheimer's Disease</li>
         
-          <li class="list-group-item">Anxiety Disorder</li>
+          <li>Anxiety Disorder</li>
         
-          <li class="list-group-item">Attention Deficit/Hyperactivity Disorder (AD/HD)</li>
+          <li>Attention Deficit/Hyperactivity Disorder (AD/HD)</li>
         
-          <li class="list-group-item">Auditory Processing Disorder</li>
+          <li>Auditory Processing Disorder</li>
         
-          <li class="list-group-item">Autism Spectrum</li>
+          <li>Autism Spectrum</li>
         
-          <li class="list-group-item">Bipolar Disorder</li>
+          <li>Bipolar Disorder</li>
         
-          <li class="list-group-item">Brain Injury</li>
+          <li>Brain Injury</li>
         
-          <li class="list-group-item">Cancer</li>
+          <li>Cancer</li>
         
-          <li class="list-group-item">Cerebral Palsy</li>
+          <li>Cerebral Palsy</li>
         
-          <li class="list-group-item">Chronic Fatigue Syndrome/Myalgic Encephalomyelitis</li>
+          <li>Chronic Fatigue Syndrome/Myalgic Encephalomyelitis</li>
         
-          <li class="list-group-item">COVID-19</li>
+          <li>COVID-19</li>
         
-          <li class="list-group-item">Depression</li>
+          <li>Depression</li>
         
-          <li class="list-group-item">Diabetes</li>
+          <li>Diabetes</li>
         
-          <li class="list-group-item">Drug Addiction</li>
+          <li>Drug Addiction</li>
         
-          <li class="list-group-item">Eating Disorders</li>
+          <li>Eating Disorders</li>
         
-          <li class="list-group-item">Electrical Sensitivity</li>
+          <li>Electrical Sensitivity</li>
         
-          <li class="list-group-item">Epilepsy/Seizure Disorder</li>
+          <li>Epilepsy/Seizure Disorder</li>
         
-          <li class="list-group-item">Fetal Alcohol Syndrome</li>
+          <li>Fetal Alcohol Syndrome</li>
         
-          <li class="list-group-item">Fibromyalgia</li>
+          <li>Fibromyalgia</li>
         
-          <li class="list-group-item">Hepatitis</li>
+          <li>Hepatitis</li>
         
-          <li class="list-group-item">Huntington's Disease</li>
+          <li>Huntington's Disease</li>
         
-          <li class="list-group-item">Intellectual Impairment</li>
+          <li>Intellectual Impairment</li>
         
-          <li class="list-group-item">Learning Disability</li>
+          <li>Learning Disability</li>
         
-          <li class="list-group-item">Lupus</li>
+          <li>Lupus</li>
         
-          <li class="list-group-item">Mental Health Conditions</li>
+          <li>Mental Health Conditions</li>
         
-          <li class="list-group-item">Multiple Sclerosis</li>
+          <li>Multiple Sclerosis</li>
         
-          <li class="list-group-item">Myalgic Encephalomyelitis/Chronic Fatigue Syndrome</li>
+          <li>Myalgic Encephalomyelitis/Chronic Fatigue Syndrome</li>
         
-          <li class="list-group-item">Obsessive Compulsive Disorder (OCD)</li>
+          <li>Obsessive Compulsive Disorder (OCD)</li>
         
-          <li class="list-group-item">Parkinson's Disease</li>
+          <li>Parkinson's Disease</li>
         
-          <li class="list-group-item">Personality Disorder</li>
+          <li>Personality Disorder</li>
         
-          <li class="list-group-item">Post-Traumatic Stress Disorder (PTSD)</li>
+          <li>Post-Traumatic Stress Disorder (PTSD)</li>
         
-          <li class="list-group-item">Schizophrenia</li>
+          <li>Schizophrenia</li>
         
-          <li class="list-group-item">Seasonal Affective Disorder (SAD)</li>
+          <li>Seasonal Affective Disorder (SAD)</li>
         
-          <li class="list-group-item">Sleep Disorder</li>
+          <li>Sleep Disorder</li>
         
-          <li class="list-group-item">Stroke</li>
+          <li>Stroke</li>
         
-          <li class="list-group-item">Tourette Syndrome</li>
+          <li>Tourette Syndrome</li>
         
       </ul>
     </div>
@@ -366,61 +373,61 @@
       <h3 id="Cognitive-3" class="anchor">Limited memory & memory loss</h3>
       <p>Includes short and long term memory loss</p>
       <h4>Associated conditions and disabilities</h4>
-      <ul class="list-group list-group-flush">
+      <ul> <!-- class="list-group list-group-flush"> -->
         
-          <li class="list-group-item">Alzheimer's Disease</li>
+          <li>Alzheimer's Disease</li>
         
-          <li class="list-group-item">Anxiety Disorder</li>
+          <li>Anxiety Disorder</li>
         
-          <li class="list-group-item">Attention Deficit/Hyperactivity Disorder (AD/HD)</li>
+          <li>Attention Deficit/Hyperactivity Disorder (AD/HD)</li>
         
-          <li class="list-group-item">Autism Spectrum</li>
+          <li>Autism Spectrum</li>
         
-          <li class="list-group-item">Brain Injury</li>
+          <li>Brain Injury</li>
         
-          <li class="list-group-item">Chronic Fatigue Syndrome/Myalgic Encephalomyelitis</li>
+          <li>Chronic Fatigue Syndrome/Myalgic Encephalomyelitis</li>
         
-          <li class="list-group-item">COVID-19</li>
+          <li>COVID-19</li>
         
-          <li class="list-group-item">Depression</li>
+          <li>Depression</li>
         
-          <li class="list-group-item">Diabetes</li>
+          <li>Diabetes</li>
         
-          <li class="list-group-item">Electrical Sensitivity</li>
+          <li>Electrical Sensitivity</li>
         
-          <li class="list-group-item">Epilepsy/Seizure Disorder</li>
+          <li>Epilepsy/Seizure Disorder</li>
         
-          <li class="list-group-item">Fetal Alcohol Syndrome</li>
+          <li>Fetal Alcohol Syndrome</li>
         
-          <li class="list-group-item">Fibromyalgia</li>
+          <li>Fibromyalgia</li>
         
-          <li class="list-group-item">Human Immunodeficiency Virus (HIV)</li>
+          <li>Human Immunodeficiency Virus (HIV)</li>
         
-          <li class="list-group-item">Huntington's Disease</li>
+          <li>Huntington's Disease</li>
         
-          <li class="list-group-item">Intellectual Impairment</li>
+          <li>Intellectual Impairment</li>
         
-          <li class="list-group-item">Learning Disability</li>
+          <li>Learning Disability</li>
         
-          <li class="list-group-item">Mental Health Conditions</li>
+          <li>Mental Health Conditions</li>
         
-          <li class="list-group-item">Multiple Chemical Sensitivity</li>
+          <li>Multiple Chemical Sensitivity</li>
         
-          <li class="list-group-item">Multiple Sclerosis</li>
+          <li>Multiple Sclerosis</li>
         
-          <li class="list-group-item">Myalgic Encephalomyelitis/Chronic Fatigue Syndrome</li>
+          <li>Myalgic Encephalomyelitis/Chronic Fatigue Syndrome</li>
         
-          <li class="list-group-item">Obsessive Compulsive Disorder (OCD)</li>
+          <li>Obsessive Compulsive Disorder (OCD)</li>
         
-          <li class="list-group-item">Parkinson's Disease</li>
+          <li>Parkinson's Disease</li>
         
-          <li class="list-group-item">Post-Traumatic Stress Disorder (PTSD)</li>
+          <li>Post-Traumatic Stress Disorder (PTSD)</li>
         
-          <li class="list-group-item">Postural Orthostatic Tachycardia Syndrome (POTS)</li>
+          <li>Postural Orthostatic Tachycardia Syndrome (POTS)</li>
         
-          <li class="list-group-item">Sleep Disorder</li>
+          <li>Sleep Disorder</li>
         
-          <li class="list-group-item">Stroke</li>
+          <li>Stroke</li>
         
       </ul>
     </div>
@@ -429,35 +436,35 @@
       <h3 id="Cognitive-4" class="anchor">Limited social skills</h3>
       <p>Includes emotional and behavioral control</p>
       <h4>Associated conditions and disabilities</h4>
-      <ul class="list-group list-group-flush">
+      <ul> <!-- class="list-group list-group-flush"> -->
         
-          <li class="list-group-item">Attention Deficit/Hyperactivity Disorder (AD/HD)</li>
+          <li>Attention Deficit/Hyperactivity Disorder (AD/HD)</li>
         
-          <li class="list-group-item">Bipolar Disorder</li>
+          <li>Bipolar Disorder</li>
         
-          <li class="list-group-item">Brain Injury</li>
+          <li>Brain Injury</li>
         
-          <li class="list-group-item">Depression</li>
+          <li>Depression</li>
         
-          <li class="list-group-item">Drug Addiction</li>
+          <li>Drug Addiction</li>
         
-          <li class="list-group-item">Eating Disorders</li>
+          <li>Eating Disorders</li>
         
-          <li class="list-group-item">Graves' Disease</li>
+          <li>Graves' Disease</li>
         
-          <li class="list-group-item">Mental Health Conditions</li>
+          <li>Mental Health Conditions</li>
         
-          <li class="list-group-item">Obsessive Compulsive Disorder (OCD)</li>
+          <li>Obsessive Compulsive Disorder (OCD)</li>
         
-          <li class="list-group-item">Personality Disorder</li>
+          <li>Personality Disorder</li>
         
-          <li class="list-group-item">Phobias</li>
+          <li>Phobias</li>
         
-          <li class="list-group-item">Schizophrenia</li>
+          <li>Schizophrenia</li>
         
-          <li class="list-group-item">Stroke</li>
+          <li>Stroke</li>
         
-          <li class="list-group-item">Tourette Syndrome</li>
+          <li>Tourette Syndrome</li>
         
       </ul>
     </div>
@@ -466,9 +473,9 @@
 
   <div>
     <h2 id="Dietary" class="anchor">Dietary</h2>
-    <p>A forthcoming description for Dietary.</p>
+    <p>A forthcoming description for dietary.</p>
     <h3>Requirements for use</h3>
-    <div class="list-group" style="max-width: 30rem">
+    <div class="list-group contents">
       
       <a href="#Dietary-1" class="list-group-item list-group-item-action">Dietary needs</a>
       
@@ -478,34 +485,34 @@
     
     <div>
       <h3 id="Dietary-1" class="anchor">Dietary needs</h3>
-      <p>A forthcoming description for Dietary needs.</p>
+      <p>A forthcoming description for dietary needs.</p>
       <h4>Associated conditions and disabilities</h4>
-      <ul class="list-group list-group-flush">
+      <ul> <!-- class="list-group list-group-flush"> -->
         
-          <li class="list-group-item">Addison's Disease</li>
+          <li>Addison's Disease</li>
         
-          <li class="list-group-item">Diabetes</li>
+          <li>Diabetes</li>
         
-          <li class="list-group-item">Food Allergy</li>
+          <li>Food Allergy</li>
         
-          <li class="list-group-item">Gastro Esophageal Reflux Disease (GERD, Acid Reflux, Heartburn)</li>
+          <li>Gastro Esophageal Reflux Disease (GERD, Acid Reflux, Heartburn)</li>
         
-          <li class="list-group-item">Human Immunodeficiency Virus (HIV)</li>
+          <li>Human Immunodeficiency Virus (HIV)</li>
         
-          <li class="list-group-item">Pregnancy</li>
+          <li>Pregnancy</li>
         
-          <li class="list-group-item">Sarcoidosis</li>
+          <li>Sarcoidosis</li>
         
       </ul>
     </div>
     
     <div>
       <h3 id="Dietary-2" class="anchor">Sensitivity to alcohol</h3>
-      <p>A forthcoming description for Sensitivity to alcohol.</p>
+      <p>A forthcoming description for sensitivity to alcohol.</p>
       <h4>Associated conditions and disabilities</h4>
-      <ul class="list-group list-group-flush">
+      <ul> <!-- class="list-group list-group-flush"> -->
         
-          <li class="list-group-item">Pregnancy</li>
+          <li>Pregnancy</li>
         
       </ul>
     </div>
@@ -514,9 +521,9 @@
 
   <div>
     <h2 id="Learning" class="anchor">Learning</h2>
-    <p>A forthcoming description for Learning.</p>
+    <p>A forthcoming description for learning.</p>
     <h3>Requirements for use</h3>
-    <div class="list-group" style="max-width: 30rem">
+    <div class="list-group contents">
       
       <a href="#Learning-1" class="list-group-item list-group-item-action">Limited ability to understand implied content</a>
       
@@ -532,7 +539,7 @@
       <h3 id="Learning-1" class="anchor">Limited ability to understand implied content</h3>
       <p>Includes emotions, body language, metaphor, and humor</p>
       <h4>Associated conditions and disabilities</h4>
-      <ul class="list-group list-group-flush">
+      <ul> <!-- class="list-group list-group-flush"> -->
         
       </ul>
     </div>
@@ -541,28 +548,28 @@
       <h3 id="Learning-2" class="anchor">Limited ability to understand number-based concepts</h3>
       <p>Inclues numbers and math concepts</p>
       <h4>Associated conditions and disabilities</h4>
-      <ul class="list-group list-group-flush">
+      <ul> <!-- class="list-group list-group-flush"> -->
         
-          <li class="list-group-item">Dyscalculia</li>
+          <li>Dyscalculia</li>
         
-          <li class="list-group-item">Fetal Alcohol Syndrome</li>
+          <li>Fetal Alcohol Syndrome</li>
         
-          <li class="list-group-item">Intellectual Impairment</li>
+          <li>Intellectual Impairment</li>
         
       </ul>
     </div>
     
     <div>
       <h3 id="Learning-3" class="anchor">Limited ability to understand spoken language</h3>
-      <p>A forthcoming description for Limited ability to understand spoken language.</p>
+      <p>A forthcoming description for limited ability to understand spoken language.</p>
       <h4>Associated conditions and disabilities</h4>
-      <ul class="list-group list-group-flush">
+      <ul> <!-- class="list-group list-group-flush"> -->
         
-          <li class="list-group-item">Aphasia</li>
+          <li>Aphasia</li>
         
-          <li class="list-group-item">Auditory Processing Disorder</li>
+          <li>Auditory Processing Disorder</li>
         
-          <li class="list-group-item">Fetal Alcohol Syndrome</li>
+          <li>Fetal Alcohol Syndrome</li>
         
       </ul>
     </div>
@@ -571,19 +578,19 @@
       <h3 id="Learning-4" class="anchor">Limited ability to understand written language</h3>
       <p>Inclues reading, writing, and spelling</p>
       <h4>Associated conditions and disabilities</h4>
-      <ul class="list-group list-group-flush">
+      <ul> <!-- class="list-group list-group-flush"> -->
         
-          <li class="list-group-item">Aphasia</li>
+          <li>Aphasia</li>
         
-          <li class="list-group-item">Dyslexia</li>
+          <li>Dyslexia</li>
         
-          <li class="list-group-item">Dysgraphia</li>
+          <li>Dysgraphia</li>
         
-          <li class="list-group-item">Fetal Alcohol Syndrome</li>
+          <li>Fetal Alcohol Syndrome</li>
         
-          <li class="list-group-item">Intellectual Impairment</li>
+          <li>Intellectual Impairment</li>
         
-          <li class="list-group-item">Learning Disability</li>
+          <li>Learning Disability</li>
         
       </ul>
     </div>
@@ -592,9 +599,9 @@
 
   <div>
     <h2 id="Mobility" class="anchor">Mobility</h2>
-    <p>A forthcoming description for Mobility.</p>
+    <p>A forthcoming description for mobility.</p>
     <h3>Requirements for use</h3>
-    <div class="list-group" style="max-width: 30rem">
+    <div class="list-group contents">
       
       <a href="#Mobility-1" class="list-group-item list-group-item-action">Dizziness</a>
       
@@ -610,62 +617,62 @@
     
     <div>
       <h3 id="Mobility-1" class="anchor">Dizziness</h3>
-      <p>A forthcoming description for Dizziness.</p>
+      <p>A forthcoming description for dizziness.</p>
       <h4>Associated conditions and disabilities</h4>
-      <ul class="list-group list-group-flush">
+      <ul> <!-- class="list-group list-group-flush"> -->
         
-          <li class="list-group-item">Chronic Fatigue Syndrome/Myalgic Encephalomyelitis</li>
+          <li>Chronic Fatigue Syndrome/Myalgic Encephalomyelitis</li>
         
-          <li class="list-group-item">Diabetes</li>
+          <li>Diabetes</li>
         
-          <li class="list-group-item">Heart Condition</li>
+          <li>Heart Condition</li>
         
-          <li class="list-group-item">Latex Allergy</li>
+          <li>Latex Allergy</li>
         
-          <li class="list-group-item">Multiple Chemical Sensitivity</li>
+          <li>Multiple Chemical Sensitivity</li>
         
-          <li class="list-group-item">Myalgic Encephalomyelitis/Chronic Fatigue Syndrome</li>
+          <li>Myalgic Encephalomyelitis/Chronic Fatigue Syndrome</li>
         
-          <li class="list-group-item">Postural Orthostatic Tachycardia Syndrome (POTS)</li>
+          <li>Postural Orthostatic Tachycardia Syndrome (POTS)</li>
         
-          <li class="list-group-item">Renal/Kidney Disease</li>
+          <li>Renal/Kidney Disease</li>
         
-          <li class="list-group-item">Vertigo</li>
+          <li>Vertigo</li>
         
       </ul>
     </div>
     
     <div>
       <h3 id="Mobility-2" class="anchor">Limited balance</h3>
-      <p>A forthcoming description for Limited balance.</p>
+      <p>A forthcoming description for limited balance.</p>
       <h4>Associated conditions and disabilities</h4>
-      <ul class="list-group list-group-flush">
+      <ul> <!-- class="list-group list-group-flush"> -->
         
-          <li class="list-group-item">Aging</li>
+          <li>Aging</li>
         
-          <li class="list-group-item">Amputation</li>
+          <li>Amputation</li>
         
-          <li class="list-group-item">Arthritis</li>
+          <li>Arthritis</li>
         
-          <li class="list-group-item">Cataplexy</li>
+          <li>Cataplexy</li>
         
-          <li class="list-group-item">Epilepsy/Seizure Disorder</li>
+          <li>Epilepsy/Seizure Disorder</li>
         
-          <li class="list-group-item">Heart Condition</li>
+          <li>Heart Condition</li>
         
-          <li class="list-group-item">Leg Impairment</li>
+          <li>Leg Impairment</li>
         
-          <li class="list-group-item">Lupus</li>
+          <li>Lupus</li>
         
-          <li class="list-group-item">Multiple Sclerosis</li>
+          <li>Multiple Sclerosis</li>
         
-          <li class="list-group-item">Paraplegia</li>
+          <li>Paraplegia</li>
         
-          <li class="list-group-item">Spina Bifida</li>
+          <li>Spina Bifida</li>
         
-          <li class="list-group-item">Stroke</li>
+          <li>Stroke</li>
         
-          <li class="list-group-item">Vertigo</li>
+          <li>Vertigo</li>
         
       </ul>
     </div>
@@ -674,71 +681,71 @@
       <h3 id="Mobility-3" class="anchor">Limited mobility</h3>
       <p>Includes difficulty walking, use of mobility aids and limited overall coordination</p>
       <h4>Associated conditions and disabilities</h4>
-      <ul class="list-group list-group-flush">
+      <ul> <!-- class="list-group list-group-flush"> -->
         
-          <li class="list-group-item">Aging</li>
+          <li>Aging</li>
         
-          <li class="list-group-item">Amputation</li>
+          <li>Amputation</li>
         
-          <li class="list-group-item">Arthritis</li>
+          <li>Arthritis</li>
         
-          <li class="list-group-item">Asthma</li>
+          <li>Asthma</li>
         
-          <li class="list-group-item">Ataxia</li>
+          <li>Ataxia</li>
         
-          <li class="list-group-item">Back Impairment</li>
+          <li>Back Impairment</li>
         
-          <li class="list-group-item">Brain Injury</li>
+          <li>Brain Injury</li>
         
-          <li class="list-group-item">Burn Injury</li>
+          <li>Burn Injury</li>
         
-          <li class="list-group-item">Cataplexy</li>
+          <li>Cataplexy</li>
         
-          <li class="list-group-item">Cerebral Palsy</li>
+          <li>Cerebral Palsy</li>
         
-          <li class="list-group-item">Charcot-Marie-Tooth</li>
+          <li>Charcot-Marie-Tooth</li>
         
-          <li class="list-group-item">Chronic Fatigue Syndrome/Myalgic Encephalomyelitis</li>
+          <li>Chronic Fatigue Syndrome/Myalgic Encephalomyelitis</li>
         
-          <li class="list-group-item">Diabetes</li>
+          <li>Diabetes</li>
         
-          <li class="list-group-item">Dystonia</li>
+          <li>Dystonia</li>
         
-          <li class="list-group-item">Ehlers-Danlos Syndrome</li>
+          <li>Ehlers-Danlos Syndrome</li>
         
-          <li class="list-group-item">Fibromyalgia</li>
+          <li>Fibromyalgia</li>
         
-          <li class="list-group-item">Guillain Barre' Syndrome</li>
+          <li>Guillain Barre' Syndrome</li>
         
-          <li class="list-group-item">Heart Condition</li>
+          <li>Heart Condition</li>
         
-          <li class="list-group-item">Leg Impairment</li>
+          <li>Leg Impairment</li>
         
-          <li class="list-group-item">Lupus</li>
+          <li>Lupus</li>
         
-          <li class="list-group-item">Muscular Dystrophy</li>
+          <li>Muscular Dystrophy</li>
         
-          <li class="list-group-item">Myalgic Encephalomyelitis/Chronic Fatigue Syndrome</li>
+          <li>Myalgic Encephalomyelitis/Chronic Fatigue Syndrome</li>
         
-          <li class="list-group-item">Myasthenia Gravis</li>
+          <li>Myasthenia Gravis</li>
         
-          <li class="list-group-item">Obesity</li>
+          <li>Obesity</li>
         
-          <li class="list-group-item">Paraplegia</li>
+          <li>Paraplegia</li>
         
-          <li class="list-group-item">Parkinson's Disease</li>
+          <li>Parkinson's Disease</li>
         
-          <li class="list-group-item">Postural Orthostatic Tachycardia Syndrome (POTS)</li>
+          <li>Postural Orthostatic Tachycardia Syndrome (POTS)</li>
         
-          <li class="list-group-item">Quadriplegia</li>
+          <li>Quadriplegia</li>
         
-          <li class="list-group-item">Reflex Sympathetic Dystrophy (RSD)</li>
+          <li>Reflex Sympathetic Dystrophy (RSD)</li>
         
-          <li class="list-group-item">Spina Bifida</li>
+          <li>Spina Bifida</li>
         
-          <li class="list-group-item">Stroke</li>
+          <li>Stroke</li>
         
-          <li class="list-group-item">Vertigo</li>
+          <li>Vertigo</li>
         
       </ul>
     </div>
@@ -747,158 +754,158 @@
       <h3 id="Mobility-4" class="anchor">Limited stamina</h3>
       <p>Includes excessive fatigue & difficulty standing</p>
       <h4>Associated conditions and disabilities</h4>
-      <ul class="list-group list-group-flush">
+      <ul> <!-- class="list-group list-group-flush"> -->
         
-          <li class="list-group-item">Addison's Disease</li>
+          <li>Addison's Disease</li>
         
-          <li class="list-group-item">Aging</li>
+          <li>Aging</li>
         
-          <li class="list-group-item">Alcoholism</li>
+          <li>Alcoholism</li>
         
-          <li class="list-group-item">Amyotrophic Lateral Sclerosis (ALS)/Lou Gehrig's Disease</li>
+          <li>Amyotrophic Lateral Sclerosis (ALS)/Lou Gehrig's Disease</li>
         
-          <li class="list-group-item">Arthritis</li>
+          <li>Arthritis</li>
         
-          <li class="list-group-item">Asthma</li>
+          <li>Asthma</li>
         
-          <li class="list-group-item">Ataxia</li>
+          <li>Ataxia</li>
         
-          <li class="list-group-item">Back Impairment</li>
+          <li>Back Impairment</li>
         
-          <li class="list-group-item">Bipolar Disorder</li>
+          <li>Bipolar Disorder</li>
         
-          <li class="list-group-item">Bladder Impairment</li>
+          <li>Bladder Impairment</li>
         
-          <li class="list-group-item">Bleeding Disorder</li>
+          <li>Bleeding Disorder</li>
         
-          <li class="list-group-item">Brain Injury</li>
+          <li>Brain Injury</li>
         
-          <li class="list-group-item">Burn Injury</li>
+          <li>Burn Injury</li>
         
-          <li class="list-group-item">Cancer</li>
+          <li>Cancer</li>
         
-          <li class="list-group-item">Charcot-Marie-Tooth</li>
+          <li>Charcot-Marie-Tooth</li>
         
-          <li class="list-group-item">Chronic Fatigue Syndrome/Myalgic Encephalomyelitis</li>
+          <li>Chronic Fatigue Syndrome/Myalgic Encephalomyelitis</li>
         
-          <li class="list-group-item">Chronic Pain</li>
+          <li>Chronic Pain</li>
         
-          <li class="list-group-item">COVID-19</li>
+          <li>COVID-19</li>
         
-          <li class="list-group-item">Depression</li>
+          <li>Depression</li>
         
-          <li class="list-group-item">Diabetes</li>
+          <li>Diabetes</li>
         
-          <li class="list-group-item">Drug Addiction</li>
+          <li>Drug Addiction</li>
         
-          <li class="list-group-item">Dystonia</li>
+          <li>Dystonia</li>
         
-          <li class="list-group-item">Eating Disorders</li>
+          <li>Eating Disorders</li>
         
-          <li class="list-group-item">Ehlers-Danlos Syndrome</li>
+          <li>Ehlers-Danlos Syndrome</li>
         
-          <li class="list-group-item">Epilepsy/Seizure Disorder</li>
+          <li>Epilepsy/Seizure Disorder</li>
         
-          <li class="list-group-item">Essential Tremors</li>
+          <li>Essential Tremors</li>
         
-          <li class="list-group-item">Fibromyalgia</li>
+          <li>Fibromyalgia</li>
         
-          <li class="list-group-item">Gastrointestinal Disorders</li>
+          <li>Gastrointestinal Disorders</li>
         
-          <li class="list-group-item">Graves' Disease</li>
+          <li>Graves' Disease</li>
         
-          <li class="list-group-item">Guillain Barre' Syndrome</li>
+          <li>Guillain Barre' Syndrome</li>
         
-          <li class="list-group-item">Hepatitis</li>
+          <li>Hepatitis</li>
         
-          <li class="list-group-item">Human Immunodeficiency Virus (HIV)</li>
+          <li>Human Immunodeficiency Virus (HIV)</li>
         
-          <li class="list-group-item">Huntington's Disease</li>
+          <li>Huntington's Disease</li>
         
-          <li class="list-group-item">Lupus</li>
+          <li>Lupus</li>
         
-          <li class="list-group-item">Lyme Disease</li>
+          <li>Lyme Disease</li>
         
-          <li class="list-group-item">Marfan Syndrome</li>
+          <li>Marfan Syndrome</li>
         
-          <li class="list-group-item">Mental Health Conditions</li>
+          <li>Mental Health Conditions</li>
         
-          <li class="list-group-item">Multiple Sclerosis</li>
+          <li>Multiple Sclerosis</li>
         
-          <li class="list-group-item">Muscular Dystrophy</li>
+          <li>Muscular Dystrophy</li>
         
-          <li class="list-group-item">Myalgic Encephalomyelitis/Chronic Fatigue Syndrome</li>
+          <li>Myalgic Encephalomyelitis/Chronic Fatigue Syndrome</li>
         
-          <li class="list-group-item">Myasthenia Gravis</li>
+          <li>Myasthenia Gravis</li>
         
-          <li class="list-group-item">Obesity</li>
+          <li>Obesity</li>
         
-          <li class="list-group-item">Paraplegia</li>
+          <li>Paraplegia</li>
         
-          <li class="list-group-item">Parkinson's Disease</li>
+          <li>Parkinson's Disease</li>
         
-          <li class="list-group-item">Poliomyelitis (Polio)/Post Polio</li>
+          <li>Poliomyelitis (Polio)/Post Polio</li>
         
-          <li class="list-group-item">Post-Traumatic Stress Disorder (PTSD)</li>
+          <li>Post-Traumatic Stress Disorder (PTSD)</li>
         
-          <li class="list-group-item">Postural Orthostatic Tachycardia Syndrome (POTS)</li>
+          <li>Postural Orthostatic Tachycardia Syndrome (POTS)</li>
         
-          <li class="list-group-item">Pregnancy</li>
+          <li>Pregnancy</li>
         
-          <li class="list-group-item">Quadriplegia</li>
+          <li>Quadriplegia</li>
         
-          <li class="list-group-item">Raynaud's Disease</li>
+          <li>Raynaud's Disease</li>
         
-          <li class="list-group-item">Reflex Sympathetic Dystrophy (RSD)</li>
+          <li>Reflex Sympathetic Dystrophy (RSD)</li>
         
-          <li class="list-group-item">Renal/Kidney Disease</li>
+          <li>Renal/Kidney Disease</li>
         
-          <li class="list-group-item">Respiratory Impairments</li>
+          <li>Respiratory Impairments</li>
         
-          <li class="list-group-item">Sarcoidosis</li>
+          <li>Sarcoidosis</li>
         
-          <li class="list-group-item">Seasonal Affective Disorder (SAD)</li>
+          <li>Seasonal Affective Disorder (SAD)</li>
         
-          <li class="list-group-item">Shingles</li>
+          <li>Shingles</li>
         
-          <li class="list-group-item">Sleep Disorder</li>
+          <li>Sleep Disorder</li>
         
-          <li class="list-group-item">Spina Bifida</li>
+          <li>Spina Bifida</li>
         
-          <li class="list-group-item">Stroke</li>
+          <li>Stroke</li>
         
-          <li class="list-group-item">Thyroid Disorders</li>
+          <li>Thyroid Disorders</li>
         
       </ul>
     </div>
     
     <div>
       <h3 id="Mobility-5" class="anchor">Limited strength and overall weakness</h3>
-      <p>A forthcoming description for Limited strength and overall weakness.</p>
+      <p>A forthcoming description for limited strength and overall weakness.</p>
       <h4>Associated conditions and disabilities</h4>
-      <ul class="list-group list-group-flush">
+      <ul> <!-- class="list-group list-group-flush"> -->
         
-          <li class="list-group-item">Aging</li>
+          <li>Aging</li>
         
-          <li class="list-group-item">Amyotrophic Lateral Sclerosis (ALS)/Lou Gehrig's Disease</li>
+          <li>Amyotrophic Lateral Sclerosis (ALS)/Lou Gehrig's Disease</li>
         
-          <li class="list-group-item">Bleeding Disorder</li>
+          <li>Bleeding Disorder</li>
         
-          <li class="list-group-item">Charcot-Marie-Tooth</li>
+          <li>Charcot-Marie-Tooth</li>
         
-          <li class="list-group-item">Chronic Fatigue Syndrome/Myalgic Encephalomyelitis</li>
+          <li>Chronic Fatigue Syndrome/Myalgic Encephalomyelitis</li>
         
-          <li class="list-group-item">Lyme Disease</li>
+          <li>Lyme Disease</li>
         
-          <li class="list-group-item">Myasthenia Gravis</li>
+          <li>Myasthenia Gravis</li>
         
-          <li class="list-group-item">Obesity</li>
+          <li>Obesity</li>
         
-          <li class="list-group-item">Parkinson's Disease</li>
+          <li>Parkinson's Disease</li>
         
-          <li class="list-group-item">Poliomyelitis (Polio)/Post Polio</li>
+          <li>Poliomyelitis (Polio)/Post Polio</li>
         
-          <li class="list-group-item">Quadriplegia</li>
+          <li>Quadriplegia</li>
         
       </ul>
     </div>
@@ -907,9 +914,9 @@
 
   <div>
     <h2 id="Motor" class="anchor">Motor</h2>
-    <p>A forthcoming description for Motor.</p>
+    <p>A forthcoming description for motor.</p>
     <h3>Requirements for use</h3>
-    <div class="list-group" style="max-width: 30rem">
+    <div class="list-group contents">
       
       <a href="#Motor-1" class="list-group-item list-group-item-action">Limited fine motor control</a>
       
@@ -929,117 +936,117 @@
       <h3 id="Motor-1" class="anchor">Limited fine motor control</h3>
       <p>Includes handling, fingering, feeling, and sensing</p>
       <h4>Associated conditions and disabilities</h4>
-      <ul class="list-group list-group-flush">
+      <ul> <!-- class="list-group list-group-flush"> -->
         
-          <li class="list-group-item">Amputation</li>
+          <li>Amputation</li>
         
-          <li class="list-group-item">Arthritis</li>
+          <li>Arthritis</li>
         
-          <li class="list-group-item">Ataxia</li>
+          <li>Ataxia</li>
         
-          <li class="list-group-item">Burn Injury</li>
+          <li>Burn Injury</li>
         
-          <li class="list-group-item">Cataplexy</li>
+          <li>Cataplexy</li>
         
-          <li class="list-group-item">Cerebral Palsy</li>
+          <li>Cerebral Palsy</li>
         
-          <li class="list-group-item">Charcot-Marie-Tooth</li>
+          <li>Charcot-Marie-Tooth</li>
         
-          <li class="list-group-item">Chronic Pain</li>
+          <li>Chronic Pain</li>
         
-          <li class="list-group-item">Cumulative Trauma Conditions</li>
+          <li>Cumulative Trauma Conditions</li>
         
-          <li class="list-group-item">Dystonia</li>
+          <li>Dystonia</li>
         
-          <li class="list-group-item">Essential Tremors</li>
+          <li>Essential Tremors</li>
         
-          <li class="list-group-item">Fetal Alcohol Syndrome</li>
+          <li>Fetal Alcohol Syndrome</li>
         
-          <li class="list-group-item">Guillain Barre' Syndrome</li>
+          <li>Guillain Barre' Syndrome</li>
         
-          <li class="list-group-item">Huntington's Disease</li>
+          <li>Huntington's Disease</li>
         
-          <li class="list-group-item">Little Person</li>
+          <li>Little Person</li>
         
-          <li class="list-group-item">Lupus</li>
+          <li>Lupus</li>
         
-          <li class="list-group-item">Muscular Dystrophy</li>
+          <li>Muscular Dystrophy</li>
         
-          <li class="list-group-item">Myasthenia Gravis</li>
+          <li>Myasthenia Gravis</li>
         
-          <li class="list-group-item">Raynaud's Disease</li>
+          <li>Raynaud's Disease</li>
         
-          <li class="list-group-item">Stroke</li>
+          <li>Stroke</li>
         
       </ul>
     </div>
     
     <div>
       <h3 id="Motor-2" class="anchor">Limited grasping & grip strength</h3>
-      <p>A forthcoming description for Limited grasping & grip strength.</p>
+      <p>A forthcoming description for limited grasping & grip strength.</p>
       <h4>Associated conditions and disabilities</h4>
-      <ul class="list-group list-group-flush">
+      <ul> <!-- class="list-group list-group-flush"> -->
         
-          <li class="list-group-item">Amputation</li>
+          <li>Amputation</li>
         
-          <li class="list-group-item">Arthritis</li>
+          <li>Arthritis</li>
         
-          <li class="list-group-item">Burn Injury</li>
+          <li>Burn Injury</li>
         
-          <li class="list-group-item">Charcot-Marie-Tooth</li>
+          <li>Charcot-Marie-Tooth</li>
         
-          <li class="list-group-item">Cumulative Trauma Conditions</li>
+          <li>Cumulative Trauma Conditions</li>
         
-          <li class="list-group-item">Fibromyalgia</li>
+          <li>Fibromyalgia</li>
         
-          <li class="list-group-item">Guillain Barre' Syndrome</li>
+          <li>Guillain Barre' Syndrome</li>
         
-          <li class="list-group-item">Little Person</li>
+          <li>Little Person</li>
         
-          <li class="list-group-item">Myasthenia Gravis</li>
+          <li>Myasthenia Gravis</li>
         
-          <li class="list-group-item">Raynaud's Disease</li>
+          <li>Raynaud's Disease</li>
         
-          <li class="list-group-item">Stroke</li>
+          <li>Stroke</li>
         
       </ul>
     </div>
     
     <div>
       <h3 id="Motor-3" class="anchor">Limited lifting</h3>
-      <p>A forthcoming description for Limited lifting.</p>
+      <p>A forthcoming description for limited lifting.</p>
       <h4>Associated conditions and disabilities</h4>
-      <ul class="list-group list-group-flush">
+      <ul> <!-- class="list-group list-group-flush"> -->
         
-          <li class="list-group-item">Aging</li>
+          <li>Aging</li>
         
-          <li class="list-group-item">Amputation</li>
+          <li>Amputation</li>
         
-          <li class="list-group-item">Arthritis</li>
+          <li>Arthritis</li>
         
-          <li class="list-group-item">Back Impairment</li>
+          <li>Back Impairment</li>
         
-          <li class="list-group-item">Bladder Impairment</li>
+          <li>Bladder Impairment</li>
         
-          <li class="list-group-item">Cumulative Trauma Conditions</li>
+          <li>Cumulative Trauma Conditions</li>
         
-          <li class="list-group-item">Dystonia</li>
+          <li>Dystonia</li>
         
-          <li class="list-group-item">Ehlers-Danlos Syndrome</li>
+          <li>Ehlers-Danlos Syndrome</li>
         
-          <li class="list-group-item">Heart Condition</li>
+          <li>Heart Condition</li>
         
-          <li class="list-group-item">Leg Impairment</li>
+          <li>Leg Impairment</li>
         
-          <li class="list-group-item">Marfan Syndrome</li>
+          <li>Marfan Syndrome</li>
         
-          <li class="list-group-item">Paraplegia</li>
+          <li>Paraplegia</li>
         
-          <li class="list-group-item">Pregnancy</li>
+          <li>Pregnancy</li>
         
-          <li class="list-group-item">Spina Bifida</li>
+          <li>Spina Bifida</li>
         
-          <li class="list-group-item">Stroke</li>
+          <li>Stroke</li>
         
       </ul>
     </div>
@@ -1048,61 +1055,61 @@
       <h3 id="Motor-4" class="anchor">Limited range of motion</h3>
       <p>Includes difficulty bending, climbing, kneeling, sitting, and squatting</p>
       <h4>Associated conditions and disabilities</h4>
-      <ul class="list-group list-group-flush">
+      <ul> <!-- class="list-group list-group-flush"> -->
         
-          <li class="list-group-item">Amputation</li>
+          <li>Amputation</li>
         
-          <li class="list-group-item">Back Impairment</li>
+          <li>Back Impairment</li>
         
-          <li class="list-group-item">Burn Injury</li>
+          <li>Burn Injury</li>
         
-          <li class="list-group-item">Chronic Pain</li>
+          <li>Chronic Pain</li>
         
-          <li class="list-group-item">Dystonia</li>
+          <li>Dystonia</li>
         
-          <li class="list-group-item">Leg Impairment</li>
+          <li>Leg Impairment</li>
         
-          <li class="list-group-item">Paraplegia</li>
+          <li>Paraplegia</li>
         
-          <li class="list-group-item">Pregnancy</li>
+          <li>Pregnancy</li>
         
-          <li class="list-group-item">Spina Bifida</li>
+          <li>Spina Bifida</li>
         
       </ul>
     </div>
     
     <div>
       <h3 id="Motor-5" class="anchor">Limited reach or range</h3>
-      <p>A forthcoming description for Limited reach or range.</p>
+      <p>A forthcoming description for limited reach or range.</p>
       <h4>Associated conditions and disabilities</h4>
-      <ul class="list-group list-group-flush">
+      <ul> <!-- class="list-group list-group-flush"> -->
         
-          <li class="list-group-item">Amputation</li>
+          <li>Amputation</li>
         
-          <li class="list-group-item">Little Person</li>
+          <li>Little Person</li>
         
-          <li class="list-group-item">Myasthenia Gravis</li>
+          <li>Myasthenia Gravis</li>
         
       </ul>
     </div>
     
     <div>
       <h3 id="Motor-6" class="anchor">Tremors & spasms</h3>
-      <p>A forthcoming description for Tremors & spasms.</p>
+      <p>A forthcoming description for tremors & spasms.</p>
       <h4>Associated conditions and disabilities</h4>
-      <ul class="list-group list-group-flush">
+      <ul> <!-- class="list-group list-group-flush"> -->
         
-          <li class="list-group-item">Amyotrophic Lateral Sclerosis (ALS)/Lou Gehrig's Disease</li>
+          <li>Amyotrophic Lateral Sclerosis (ALS)/Lou Gehrig's Disease</li>
         
-          <li class="list-group-item">Essential Tremors</li>
+          <li>Essential Tremors</li>
         
-          <li class="list-group-item">Obsessive Compulsive Disorder (OCD)</li>
+          <li>Obsessive Compulsive Disorder (OCD)</li>
         
-          <li class="list-group-item">Parkinson's Disease</li>
+          <li>Parkinson's Disease</li>
         
-          <li class="list-group-item">Postural Orthostatic Tachycardia Syndrome (POTS)</li>
+          <li>Postural Orthostatic Tachycardia Syndrome (POTS)</li>
         
-          <li class="list-group-item">Thyroid Disorders</li>
+          <li>Thyroid Disorders</li>
         
       </ul>
     </div>
@@ -1111,9 +1118,9 @@
 
   <div>
     <h2 id="Safety" class="anchor">Safety</h2>
-    <p>A forthcoming description for Safety.</p>
+    <p>A forthcoming description for safety.</p>
     <h3>Requirements for use</h3>
-    <div class="list-group" style="max-width: 30rem">
+    <div class="list-group contents">
       
       <a href="#Safety-1" class="list-group-item list-group-item-action">Limited ability to be alone safely</a>
       
@@ -1125,73 +1132,73 @@
     
     <div>
       <h3 id="Safety-1" class="anchor">Limited ability to be alone safely</h3>
-      <p>A forthcoming description for Limited ability to be alone safely.</p>
+      <p>A forthcoming description for limited ability to be alone safely.</p>
       <h4>Associated conditions and disabilities</h4>
-      <ul class="list-group list-group-flush">
+      <ul> <!-- class="list-group list-group-flush"> -->
         
-          <li class="list-group-item">Epilepsy/Seizure Disorder</li>
+          <li>Epilepsy/Seizure Disorder</li>
         
-          <li class="list-group-item">Obsessive Compulsive Disorder (OCD)</li>
+          <li>Obsessive Compulsive Disorder (OCD)</li>
         
-          <li class="list-group-item">Parkinson's Disease</li>
+          <li>Parkinson's Disease</li>
         
-          <li class="list-group-item">Schizophrenia</li>
+          <li>Schizophrenia</li>
         
       </ul>
     </div>
     
     <div>
       <h3 id="Safety-2" class="anchor">Respiratory Limitations</h3>
-      <p>A forthcoming description for Respiratory Limitations.</p>
+      <p>A forthcoming description for respiratory limitations.</p>
       <h4>Associated conditions and disabilities</h4>
-      <ul class="list-group list-group-flush">
+      <ul> <!-- class="list-group list-group-flush"> -->
         
-          <li class="list-group-item">Asthma</li>
+          <li>Asthma</li>
         
-          <li class="list-group-item">Autism Spectrum</li>
+          <li>Autism Spectrum</li>
         
-          <li class="list-group-item">Burn Injury</li>
+          <li>Burn Injury</li>
         
-          <li class="list-group-item">Cancer</li>
+          <li>Cancer</li>
         
-          <li class="list-group-item">COVID-19</li>
+          <li>COVID-19</li>
         
-          <li class="list-group-item">Electrical Sensitivity</li>
+          <li>Electrical Sensitivity</li>
         
-          <li class="list-group-item">Fibromyalgia</li>
+          <li>Fibromyalgia</li>
         
-          <li class="list-group-item">Food Allergy</li>
+          <li>Food Allergy</li>
         
-          <li class="list-group-item">Fragrance Sensitivity</li>
+          <li>Fragrance Sensitivity</li>
         
-          <li class="list-group-item">Heart Condition</li>
+          <li>Heart Condition</li>
         
-          <li class="list-group-item">Human Immunodeficiency Virus (HIV)</li>
+          <li>Human Immunodeficiency Virus (HIV)</li>
         
-          <li class="list-group-item">Latex Allergy</li>
+          <li>Latex Allergy</li>
         
-          <li class="list-group-item">Lupus</li>
+          <li>Lupus</li>
         
-          <li class="list-group-item">Multiple Chemical Sensitivity</li>
+          <li>Multiple Chemical Sensitivity</li>
         
-          <li class="list-group-item">Respiratory Impairments</li>
+          <li>Respiratory Impairments</li>
         
-          <li class="list-group-item">Sarcoidosis</li>
+          <li>Sarcoidosis</li>
         
       </ul>
     </div>
     
     <div>
       <h3 id="Safety-3" class="anchor">Seizures</h3>
-      <p>A forthcoming description for Seizures.</p>
+      <p>A forthcoming description for seizures.</p>
       <h4>Associated conditions and disabilities</h4>
-      <ul class="list-group list-group-flush">
+      <ul> <!-- class="list-group list-group-flush"> -->
         
-          <li class="list-group-item">Brain Injury</li>
+          <li>Brain Injury</li>
         
-          <li class="list-group-item">Diabetes</li>
+          <li>Diabetes</li>
         
-          <li class="list-group-item">Lupus</li>
+          <li>Lupus</li>
         
       </ul>
     </div>
@@ -1200,9 +1207,9 @@
 
   <div>
     <h2 id="Sensory" class="anchor">Sensory</h2>
-    <p>A forthcoming description for Sensory.</p>
+    <p>A forthcoming description for sensory.</p>
     <h3>Requirements for use</h3>
-    <div class="list-group" style="max-width: 30rem">
+    <div class="list-group contents">
       
       <a href="#Sensory-1" class="list-group-item list-group-item-action">Chemical Sensitivity</a>
       
@@ -1226,33 +1233,33 @@
       <h3 id="Sensory-1" class="anchor">Chemical Sensitivity</h3>
       <p>Includes chemicals, fragrences, and smoke</p>
       <h4>Associated conditions and disabilities</h4>
-      <ul class="list-group list-group-flush">
+      <ul> <!-- class="list-group list-group-flush"> -->
         
-          <li class="list-group-item">Asthma</li>
+          <li>Asthma</li>
         
-          <li class="list-group-item">Fragrance Sensitivity</li>
+          <li>Fragrance Sensitivity</li>
         
-          <li class="list-group-item">Pregnancy</li>
+          <li>Pregnancy</li>
         
       </ul>
     </div>
     
     <div>
       <h3 id="Sensory-2" class="anchor">Flashing sensitivity</h3>
-      <p>A forthcoming description for Flashing sensitivity.</p>
+      <p>A forthcoming description for flashing sensitivity.</p>
       <h4>Associated conditions and disabilities</h4>
-      <ul class="list-group list-group-flush">
+      <ul> <!-- class="list-group list-group-flush"> -->
         
       </ul>
     </div>
     
     <div>
       <h3 id="Sensory-3" class="anchor">Latex sensitivity</h3>
-      <p>A forthcoming description for Latex sensitivity.</p>
+      <p>A forthcoming description for latex sensitivity.</p>
       <h4>Associated conditions and disabilities</h4>
-      <ul class="list-group list-group-flush">
+      <ul> <!-- class="list-group list-group-flush"> -->
         
-          <li class="list-group-item">Latex Allergy</li>
+          <li>Latex Allergy</li>
         
       </ul>
     </div>
@@ -1261,207 +1268,207 @@
       <h3 id="Sensory-4" class="anchor">Motion sensitivity</h3>
       <p>Includes on-screen animation and other movement</p>
       <h4>Associated conditions and disabilities</h4>
-      <ul class="list-group list-group-flush">
+      <ul> <!-- class="list-group list-group-flush"> -->
         
       </ul>
     </div>
     
     <div>
       <h3 id="Sensory-5" class="anchor">Noise sensitivity</h3>
-      <p>A forthcoming description for Noise sensitivity.</p>
+      <p>A forthcoming description for noise sensitivity.</p>
       <h4>Associated conditions and disabilities</h4>
-      <ul class="list-group list-group-flush">
+      <ul> <!-- class="list-group list-group-flush"> -->
         
-          <li class="list-group-item">Autism Spectrum</li>
+          <li>Autism Spectrum</li>
         
-          <li class="list-group-item">Chronic Fatigue Syndrome/Myalgic Encephalomyelitis</li>
+          <li>Chronic Fatigue Syndrome/Myalgic Encephalomyelitis</li>
         
-          <li class="list-group-item">Migraines</li>
+          <li>Migraines</li>
         
-          <li class="list-group-item">Myalgic Encephalomyelitis/Chronic Fatigue Syndrome</li>
+          <li>Myalgic Encephalomyelitis/Chronic Fatigue Syndrome</li>
         
       </ul>
     </div>
     
     <div>
       <h3 id="Sensory-6" class="anchor">Photosensitivity</h3>
-      <p>A forthcoming description for Photosensitivity.</p>
+      <p>A forthcoming description for photosensitivity.</p>
       <h4>Associated conditions and disabilities</h4>
-      <ul class="list-group list-group-flush">
+      <ul> <!-- class="list-group list-group-flush"> -->
         
-          <li class="list-group-item">Albinism</li>
+          <li>Albinism</li>
         
-          <li class="list-group-item">Arthritis</li>
+          <li>Arthritis</li>
         
-          <li class="list-group-item">Autism Spectrum</li>
+          <li>Autism Spectrum</li>
         
-          <li class="list-group-item">Brain Injury</li>
+          <li>Brain Injury</li>
         
-          <li class="list-group-item">Chronic Fatigue Syndrome/Myalgic Encephalomyelitis</li>
+          <li>Chronic Fatigue Syndrome/Myalgic Encephalomyelitis</li>
         
-          <li class="list-group-item">Electrical Sensitivity</li>
+          <li>Electrical Sensitivity</li>
         
-          <li class="list-group-item">Epilepsy/Seizure Disorder</li>
+          <li>Epilepsy/Seizure Disorder</li>
         
-          <li class="list-group-item">Human Immunodeficiency Virus (HIV)</li>
+          <li>Human Immunodeficiency Virus (HIV)</li>
         
-          <li class="list-group-item">Migraines</li>
+          <li>Migraines</li>
         
-          <li class="list-group-item">Myalgic Encephalomyelitis/Chronic Fatigue Syndrome</li>
+          <li>Myalgic Encephalomyelitis/Chronic Fatigue Syndrome</li>
         
-          <li class="list-group-item">Sarcoidosis</li>
+          <li>Sarcoidosis</li>
         
       </ul>
     </div>
     
     <div>
       <h3 id="Sensory-7" class="anchor">Stress intolerance</h3>
-      <p>A forthcoming description for Stress intolerance.</p>
+      <p>A forthcoming description for stress intolerance.</p>
       <h4>Associated conditions and disabilities</h4>
-      <ul class="list-group list-group-flush">
+      <ul> <!-- class="list-group list-group-flush"> -->
         
-          <li class="list-group-item">Aging</li>
+          <li>Aging</li>
         
-          <li class="list-group-item">Alcoholism</li>
+          <li>Alcoholism</li>
         
-          <li class="list-group-item">Amputation</li>
+          <li>Amputation</li>
         
-          <li class="list-group-item">Amyotrophic Lateral Sclerosis (ALS)/Lou Gehrig's Disease</li>
+          <li>Amyotrophic Lateral Sclerosis (ALS)/Lou Gehrig's Disease</li>
         
-          <li class="list-group-item">Anxiety Disorder</li>
+          <li>Anxiety Disorder</li>
         
-          <li class="list-group-item">Arthritis</li>
+          <li>Arthritis</li>
         
-          <li class="list-group-item">Attention Deficit/Hyperactivity Disorder (AD/HD)</li>
+          <li>Attention Deficit/Hyperactivity Disorder (AD/HD)</li>
         
-          <li class="list-group-item">Autism Spectrum</li>
+          <li>Autism Spectrum</li>
         
-          <li class="list-group-item">Bipolar Disorder</li>
+          <li>Bipolar Disorder</li>
         
-          <li class="list-group-item">Brain Injury</li>
+          <li>Brain Injury</li>
         
-          <li class="list-group-item">Burn Injury</li>
+          <li>Burn Injury</li>
         
-          <li class="list-group-item">Cancer</li>
+          <li>Cancer</li>
         
-          <li class="list-group-item">Cataplexy</li>
+          <li>Cataplexy</li>
         
-          <li class="list-group-item">Chronic Fatigue Syndrome/Myalgic Encephalomyelitis</li>
+          <li>Chronic Fatigue Syndrome/Myalgic Encephalomyelitis</li>
         
-          <li class="list-group-item">Chronic Pain</li>
+          <li>Chronic Pain</li>
         
-          <li class="list-group-item">Depression</li>
+          <li>Depression</li>
         
-          <li class="list-group-item">Drug Addiction</li>
+          <li>Drug Addiction</li>
         
-          <li class="list-group-item">Eating Disorders</li>
+          <li>Eating Disorders</li>
         
-          <li class="list-group-item">Electrical Sensitivity</li>
+          <li>Electrical Sensitivity</li>
         
-          <li class="list-group-item">Epilepsy/Seizure Disorder</li>
+          <li>Epilepsy/Seizure Disorder</li>
         
-          <li class="list-group-item">Essential Tremors</li>
+          <li>Essential Tremors</li>
         
-          <li class="list-group-item">Fetal Alcohol Syndrome</li>
+          <li>Fetal Alcohol Syndrome</li>
         
-          <li class="list-group-item">Fibromyalgia</li>
+          <li>Fibromyalgia</li>
         
-          <li class="list-group-item">Gastrointestinal Disorders</li>
+          <li>Gastrointestinal Disorders</li>
         
-          <li class="list-group-item">Hepatitis</li>
+          <li>Hepatitis</li>
         
-          <li class="list-group-item">Human Immunodeficiency Virus (HIV)</li>
+          <li>Human Immunodeficiency Virus (HIV)</li>
         
-          <li class="list-group-item">Huntington's Disease</li>
+          <li>Huntington's Disease</li>
         
-          <li class="list-group-item">Lupus</li>
+          <li>Lupus</li>
         
-          <li class="list-group-item">Lyme Disease</li>
+          <li>Lyme Disease</li>
         
-          <li class="list-group-item">Marfan Syndrome</li>
+          <li>Marfan Syndrome</li>
         
-          <li class="list-group-item">Mental Health Conditions</li>
+          <li>Mental Health Conditions</li>
         
-          <li class="list-group-item">Migraines</li>
+          <li>Migraines</li>
         
-          <li class="list-group-item">Muscular Dystrophy</li>
+          <li>Muscular Dystrophy</li>
         
-          <li class="list-group-item">Myalgic Encephalomyelitis/Chronic Fatigue Syndrome</li>
+          <li>Myalgic Encephalomyelitis/Chronic Fatigue Syndrome</li>
         
-          <li class="list-group-item">Obsessive Compulsive Disorder (OCD)</li>
+          <li>Obsessive Compulsive Disorder (OCD)</li>
         
-          <li class="list-group-item">Personality Disorder</li>
+          <li>Personality Disorder</li>
         
-          <li class="list-group-item">Phobias</li>
+          <li>Phobias</li>
         
-          <li class="list-group-item">Post-Traumatic Stress Disorder (PTSD)</li>
+          <li>Post-Traumatic Stress Disorder (PTSD)</li>
         
-          <li class="list-group-item">Raynaud's Disease</li>
+          <li>Raynaud's Disease</li>
         
-          <li class="list-group-item">Reflex Sympathetic Dystrophy (RSD)</li>
+          <li>Reflex Sympathetic Dystrophy (RSD)</li>
         
-          <li class="list-group-item">Schizophrenia</li>
+          <li>Schizophrenia</li>
         
-          <li class="list-group-item">Shingles</li>
+          <li>Shingles</li>
         
-          <li class="list-group-item">Sickle Cell Anemia</li>
+          <li>Sickle Cell Anemia</li>
         
-          <li class="list-group-item">Skin Conditions</li>
+          <li>Skin Conditions</li>
         
-          <li class="list-group-item">Sleep Disorder</li>
+          <li>Sleep Disorder</li>
         
-          <li class="list-group-item">Tourette Syndrome</li>
+          <li>Tourette Syndrome</li>
         
-          <li class="list-group-item">Vertigo</li>
+          <li>Vertigo</li>
         
       </ul>
     </div>
     
     <div>
       <h3 id="Sensory-8" class="anchor">Temperature sensitivity</h3>
-      <p>A forthcoming description for Temperature sensitivity.</p>
+      <p>A forthcoming description for temperature sensitivity.</p>
       <h4>Associated conditions and disabilities</h4>
-      <ul class="list-group list-group-flush">
+      <ul> <!-- class="list-group list-group-flush"> -->
         
-          <li class="list-group-item">Addison's Disease</li>
+          <li>Addison's Disease</li>
         
-          <li class="list-group-item">Bleeding Disorder</li>
+          <li>Bleeding Disorder</li>
         
-          <li class="list-group-item">Burn Injury</li>
+          <li>Burn Injury</li>
         
-          <li class="list-group-item">Cancer</li>
+          <li>Cancer</li>
         
-          <li class="list-group-item">Chronic Fatigue Syndrome/Myalgic Encephalomyelitis</li>
+          <li>Chronic Fatigue Syndrome/Myalgic Encephalomyelitis</li>
         
-          <li class="list-group-item">Essential Tremors</li>
+          <li>Essential Tremors</li>
         
-          <li class="list-group-item">Graves' Disease</li>
+          <li>Graves' Disease</li>
         
-          <li class="list-group-item">Heart Condition</li>
+          <li>Heart Condition</li>
         
-          <li class="list-group-item">Human Immunodeficiency Virus (HIV)</li>
+          <li>Human Immunodeficiency Virus (HIV)</li>
         
-          <li class="list-group-item">Lupus</li>
+          <li>Lupus</li>
         
-          <li class="list-group-item">Multiple Sclerosis</li>
+          <li>Multiple Sclerosis</li>
         
-          <li class="list-group-item">Myalgic Encephalomyelitis/Chronic Fatigue Syndrome</li>
+          <li>Myalgic Encephalomyelitis/Chronic Fatigue Syndrome</li>
         
-          <li class="list-group-item">Postural Orthostatic Tachycardia Syndrome (POTS)</li>
+          <li>Postural Orthostatic Tachycardia Syndrome (POTS)</li>
         
-          <li class="list-group-item">Pregnancy</li>
+          <li>Pregnancy</li>
         
-          <li class="list-group-item">Raynaud's Disease</li>
+          <li>Raynaud's Disease</li>
         
-          <li class="list-group-item">Sarcoidosis</li>
+          <li>Sarcoidosis</li>
         
-          <li class="list-group-item">Shingles</li>
+          <li>Shingles</li>
         
-          <li class="list-group-item">Sickle Cell Anemia</li>
+          <li>Sickle Cell Anemia</li>
         
-          <li class="list-group-item">Skin Conditions</li>
+          <li>Skin Conditions</li>
         
-          <li class="list-group-item">Thyroid Disorders</li>
+          <li>Thyroid Disorders</li>
         
       </ul>
     </div>
@@ -1470,9 +1477,9 @@
 
   <div>
     <h2 id="Visual" class="anchor">Visual</h2>
-    <p>A forthcoming description for Visual.</p>
+    <p>A forthcoming description for visual.</p>
     <h3>Requirements for use</h3>
-    <div class="list-group" style="max-width: 30rem">
+    <div class="list-group contents">
       
       <a href="#Visual-1" class="list-group-item list-group-item-action">Limited color perception</a>
       
@@ -1484,51 +1491,51 @@
     
     <div>
       <h3 id="Visual-1" class="anchor">Limited color perception</h3>
-      <p>A forthcoming description for Limited color perception.</p>
+      <p>A forthcoming description for limited color perception.</p>
       <h4>Associated conditions and disabilities</h4>
-      <ul class="list-group list-group-flush">
+      <ul> <!-- class="list-group list-group-flush"> -->
         
-          <li class="list-group-item">Colorblind/Color Vision Deficiency</li>
+          <li>Colorblind/Color Vision Deficiency</li>
         
       </ul>
     </div>
     
     <div>
       <h3 id="Visual-2" class="anchor">Limited vision & visual processing</h3>
-      <p>A forthcoming description for Limited vision & visual processing.</p>
+      <p>A forthcoming description for limited vision & visual processing.</p>
       <h4>Associated conditions and disabilities</h4>
-      <ul class="list-group list-group-flush">
+      <ul> <!-- class="list-group list-group-flush"> -->
         
-          <li class="list-group-item">Addison's Disease</li>
+          <li>Addison's Disease</li>
         
-          <li class="list-group-item">Aging</li>
+          <li>Aging</li>
         
-          <li class="list-group-item">Albinism</li>
+          <li>Albinism</li>
         
-          <li class="list-group-item">Diabetes</li>
+          <li>Diabetes</li>
         
-          <li class="list-group-item">Human Immunodeficiency Virus (HIV)</li>
+          <li>Human Immunodeficiency Virus (HIV)</li>
         
-          <li class="list-group-item">Low Vision</li>
+          <li>Low Vision</li>
         
-          <li class="list-group-item">Lupus</li>
+          <li>Lupus</li>
         
-          <li class="list-group-item">Multiple Sclerosis</li>
+          <li>Multiple Sclerosis</li>
         
-          <li class="list-group-item">Sarcoidosis</li>
+          <li>Sarcoidosis</li>
         
-          <li class="list-group-item">Shingles</li>
+          <li>Shingles</li>
         
       </ul>
     </div>
     
     <div>
       <h3 id="Visual-3" class="anchor">Without vision</h3>
-      <p>A forthcoming description for Without vision.</p>
+      <p>A forthcoming description for without vision.</p>
       <h4>Associated conditions and disabilities</h4>
-      <ul class="list-group list-group-flush">
+      <ul> <!-- class="list-group list-group-flush"> -->
         
-          <li class="list-group-item">Blindness</li>
+          <li>Blindness</li>
         
       </ul>
     </div>
@@ -1537,9 +1544,9 @@
 
   <div>
     <h2 id="Vocal" class="anchor">Vocal</h2>
-    <p>A forthcoming description for Vocal.</p>
+    <p>A forthcoming description for vocal.</p>
     <h3>Requirements for use</h3>
-    <div class="list-group" style="max-width: 30rem">
+    <div class="list-group contents">
       
       <a href="#Vocal-1" class="list-group-item list-group-item-action">Limited speech</a>
       
@@ -1551,34 +1558,34 @@
       <h3 id="Vocal-1" class="anchor">Limited speech</h3>
       <p>Includes weak speech and stuttering</p>
       <h4>Associated conditions and disabilities</h4>
-      <ul class="list-group list-group-flush">
+      <ul> <!-- class="list-group list-group-flush"> -->
         
-          <li class="list-group-item">Aphasia</li>
+          <li>Aphasia</li>
         
-          <li class="list-group-item">Ataxia</li>
+          <li>Ataxia</li>
         
-          <li class="list-group-item">Cataplexy</li>
+          <li>Cataplexy</li>
         
-          <li class="list-group-item">Dystonia</li>
+          <li>Dystonia</li>
         
-          <li class="list-group-item">Essential Tremors</li>
+          <li>Essential Tremors</li>
         
-          <li class="list-group-item">Speech-Language Impairment</li>
+          <li>Speech-Language Impairment</li>
         
-          <li class="list-group-item">Stroke</li>
+          <li>Stroke</li>
         
-          <li class="list-group-item">Stuttering</li>
+          <li>Stuttering</li>
         
       </ul>
     </div>
     
     <div>
       <h3 id="Vocal-2" class="anchor">Without speech</h3>
-      <p>A forthcoming description for Without speech.</p>
+      <p>A forthcoming description for without speech.</p>
       <h4>Associated conditions and disabilities</h4>
-      <ul class="list-group list-group-flush">
+      <ul> <!-- class="list-group list-group-flush"> -->
         
-          <li class="list-group-item">Speech-Language Impairment</li>
+          <li>Speech-Language Impairment</li>
         
       </ul>
     </div>

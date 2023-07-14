@@ -43,7 +43,7 @@ def build_reqs_for_use_with_conditions(req_row, conditions_row):
     return dict(
         category=category.strip(),
         name=req_name.strip(),
-        description=req_desc or f"A forthcoming description for {req_name.strip()}.",
+        description=req_desc or f"A forthcoming description for {req_name.lower().strip()}.",
         conditions=associated_conditions,
     )
 
@@ -71,7 +71,7 @@ def load_taxonomy():
         # TODO: Switch this once categories and conditions have their own CSVs
         "categories": sorted(
             (
-                dict(name=cat, description=f"A forthcoming description for {cat}.")
+                dict(name=cat, description=f"A forthcoming description for {cat.lower()}.")
                 for cat
                 in uniq_categories
             ),
