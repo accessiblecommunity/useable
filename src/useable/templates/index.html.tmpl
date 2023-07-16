@@ -12,8 +12,16 @@
     body {
       font-family: Archivo, sans-serif;
     }
-    h1 .navbar-text {
-      font-size: 0.7em;
+    .ac-text {
+      color: #041058;
+      text-decoration: none;
+    }
+    h1.navbar-brand {
+      font-size: 1.3rem;
+      line-height: 0.9rem;
+    }
+    h1 .small {
+      font-size: 0.5em;
     }
     h2 {
       font-size: 1.8rem;
@@ -34,33 +42,33 @@
       max-width: 30rem;
       margin-left: 1rem;
     }
+    img.ac-logo {
+      height: 2em;
+      width: 2em;
+    }
   </style>
 </head>
 <body>
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top mb-3">
-  <div class="container-fluid">
-    <a class="visually-hidden-focusable nav-item" href="#main">Skip to Main Content</a>    
-    <h1 class="navbar-brand ms-3 mt-1">
-      <a href="#" class="text-black"><b>use</b>able</a>
-      <span class="navbar-text">v{{ version }}</span>
-    </h1>
+  <div class="container-fluid justify-content-start">
+    <a class="visually-hidden-focusable nav-link me-3" href="#main"> Skip to Main Content </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    <h1 class="navbar-brand ms-3 mt-1 mb-0">
+      <a class="ac-text" href="./index.html">
+        <b>use</b>able<br/>
+        <span class="small muted">v{{ version }}</span>
+      </a>
+    </h1>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <span class="visually-hidden">Usage</span> Categories
-          </a>
-          <ul class="dropdown-menu">
-            {% for cat in taxonomy['categories'] %}
-            <li>
-              <a class="dropdown-item" href="#{{ cat.name }}">{{ cat.name }}</a>
-            </li>
-            {% endfor %}
-          </ul>
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="./categories.html">Usage Categories</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./conditions.html">Conditions and Disabilities</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -76,56 +84,34 @@
           <a class="nav-link icon-link" href="{{ metadata.repository }}"><img class="bi" src="./assets/github-mark.svg" aria-hidden="true"><span class="visually-hidden"> GitHub</span> Repository</a>
         </li>
       </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="d-none d-lg-block nav-link" href="https://www.accessiblecommunity.org">
+            <img class="ac-logo" src="./assets/ac_logo_blue.png" aria-hidden="true">
+            <span class="visually-hidden">Accessible Community</span>
+          </a>
+          <a class="d-block d-lg-none nav-link icon-link ac-text" href="https://www.accessiblecommunity.org">
+            <img class="bi" src="./assets/ac_logo_blue.png" aria-hidden="true">
+            Accessible <b>Community</b>
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>
 
 <div class="container-md">
-  <h2 class="anchor" id="main">Overview</h2>
-  <p><b>use</b>able, coordinated by <a href="https://www.accessiblecommunity.org">Accessible Community</a>, {{ metadata['description'] }}</p>
-  <p> The <b>use</b>able taxonomy is based around previous work in the fields of accessibility and accommodations:
+  <h2 id="main" class="anchor">Overview</h2>
+  <p><span class="ac-text"><b>use</b>able</span>, coordinated by <a href="https://www.accessiblecommunity.org">Accessible Community</a>, {{ metadata['description'] }}</p>
+  <p> The <span class="ac-text"><b>use</b>able</span> taxonomy is based around previous work in the fields of accessibility and accommodations:
     <ul>
-    {% for ref in metadata['references'] %}
+      {% for ref in metadata.references -%}
       <li><a href="{{ ref.url }}">{{ ref.name }}</a> provided by the {{ ref.org }}.</li>
-    {% endfor %}
+      {%- endfor %}
     </ul>
   </p>
   <p>We <a href="{{ metadata.repository }}/issues">welcome comments and feedback</a> to encourage the establishment of a worldwide mapping to help build tools and solutions for people with disabilities. Please create or comment on any of the current GitHub issues.</p>
   <p>If you'd prefer, you can download the structure of the taxonomy as a JSON document by clicking the download dropdown in the navbar at the top.</p>
-
-  <h2 class="mt-5">Usage categories</h2>
-  <div class="mb-3">
-    <div class="list-group contents">
-    {% for cat in taxonomy['categories'] %}
-      <a class="list-group-item list-group-item-action" href="#{{ cat.name }}">{{ cat.name }}</a>
-    {% endfor %}
-    </div>
-  </div>
-
-{% for cat in taxonomy['categories'] %}
-  <div>
-    <h2 id="{{ cat.name }}" class="anchor">{{ cat.name }}</h2>
-    {% if cat.description %}<p>{{ cat.description }}</p>{% endif %}
-    <h3>Requirements for use</h3>
-    <div class="list-group contents">
-      {% for req in cat['requirements'] %}
-      <a href="#{{ cat.name }}-{{loop.index}}" class="list-group-item list-group-item-action">{{ req.name }}</a>
-      {% endfor %}
-    </div>
-    {% for req in cat['requirements'] %}
-    <div>
-      <h3 id="{{ cat.name }}-{{loop.index}}" class="anchor">{{ req.name }}</h3>
-      {% if req.description %}<p>{{ req.description }}</p>{% endif %}
-      <h4>Associated conditions and disabilities</h4>
-      <ul> <!-- class="list-group list-group-flush"> -->
-        {% for condition in req['conditions'] %}
-          <li>{{ condition }}</li>
-        {% endfor %}
-      </ul>
-    </div>
-    {% endfor %}
-  </div>
-{% endfor %}
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>

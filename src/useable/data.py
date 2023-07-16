@@ -69,7 +69,7 @@ def load_taxonomy():
 
     return {
         # TODO: Switch this once categories and conditions have their own CSVs
-        "categories": sorted(
+        'categories': sorted(
             (
                 dict(name=cat, description=f"A forthcoming description for {cat.lower()}.")
                 for cat
@@ -77,8 +77,8 @@ def load_taxonomy():
             ),
             key=itemgetter('name')
         ),
-        "conditions": sorted(conditions_row),
-        "requirements": sorted(
+        'conditions': sorted(conditions_row),
+        'requirements': sorted(
             sorted(
                 (
                     build_reqs_for_use_with_conditions(row, conditions_row)
@@ -91,12 +91,20 @@ def load_taxonomy():
     }
 
 
-def load_taxonomy_with_req_in_categories():
+def load_taxonomy_with_linked_data():
     """
     Build the useable taxonomy from the data files, including additional references
     for categories that makes building templates easier.
     """
     taxonomy = load_taxonomy()
+    taxonomy['conditions'] = [
+        dict(name=cd_name, requirements=[
+            f"{req['category']}: {req['name']}"
+            for req in taxonomy['requirements']
+            if cd_name in req['conditions']
+        ])
+        for cd_name in taxonomy['conditions']
+    ]
 
     for cat in taxonomy['categories']:
         cat_name = cat['name']
@@ -112,5 +120,5 @@ def load_taxonomy_with_req_in_categories():
 __all__ = [
     'load_project_metadata',
     'load_taxonomy',
-    'load_taxonomy_with_req_in_categories'
+    'load_taxonomy_with_linked_data'
 ]

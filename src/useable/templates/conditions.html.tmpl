@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>useable v0.0.1-4-ga3b564f</title>
+  <title>useable v{{ version }}</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,14 +52,14 @@
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top mb-3">
   <div class="container-fluid justify-content-start">
-    <a class="visually-hidden-focusable nav-link me-3" href="#main"> Skip to Main Content </a>
+    <a class="visually-hidden-focusable nav-item" href="#main">Skip to Main Content</a>    
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <h1 class="navbar-brand ms-3 mt-1 mb-0">
       <a class="ac-text" href="./index.html">
         <b>use</b>able<br/>
-        <span class="small muted">v0.0.1-4-ga3b564f</span>
+        <span class="small muted">v{{ version }}</span>
       </a>
     </h1>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -68,7 +68,7 @@
           <a class="nav-link" href="./categories.html">Usage Categories</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./conditions.html">Conditions and Disabilities</a>
+          <a class="nav-link active" aria-current="page" href="#main">Conditions and Disabilities</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -81,14 +81,14 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link icon-link" href="https://github.com/accessiblecommunity/useable"><img class="bi" src="./assets/github-mark.svg" aria-hidden="true"><span class="visually-hidden"> GitHub</span> Repository</a>
+          <a class="nav-link icon-link" href="{{ metadata.repository }}"><img class="bi" src="./assets/github-mark.svg" aria-hidden="true"><span class="visually-hidden"> GitHub</span> Repository</a>
         </li>
       </ul>
       <ul class="navbar-nav">
         <li class="nav-item">
           <a class="d-none d-lg-block nav-link" href="https://www.accessiblecommunity.org">
             <img class="ac-logo" src="./assets/ac_logo_blue.png" aria-hidden="true">
-            <span class="visually-hidden">Accessible Community</span>
+            <span class="visually-hidden"> Accessible Community</span>
           </a>
           <a class="d-block d-lg-none nav-link icon-link ac-text" href="https://www.accessiblecommunity.org">
             <img class="bi" src="./assets/ac_logo_blue.png" aria-hidden="true">
@@ -101,15 +101,20 @@
 </nav>
 
 <div class="container-md">
-  <h2 id="main" class="anchor">Overview</h2>
-  <p><span class="ac-text"><b>use</b>able</span>, coordinated by <a href="https://www.accessiblecommunity.org">Accessible Community</a>, associates people with disabilities' requirements for use with broader functional categories and known disabilities and conditions. This taxonomy crosses digital and physical spaces as well as accommodations in a way that previous categorizations have not. This type of mapping is needed to help build tools and resources to help the entire disability community.</p>
-  <p> The <span class="ac-text"><b>use</b>able</span> taxonomy is based around previous work in the fields of accessibility and accommodations:
+  <h2 id="main" class="anchor">Conditions and Disabilities</h2>
+  <p> The following is a list of all of the conditions and disabilities registered in this taxonomy and the requirements for use associated with them. It's important to note that not every individual experiencing a condition or diability will need accommodations for every requirement of use, as each individual's experience and limitations are different.
+
+  {% for cond in taxonomy['conditions'] -%}
+  <div>
+    <h3>{{ cond.name }}</h3>
     <ul>
-      <li><a href="https://www.access-board.gov/ict/#302-functional-performance-criteria">Functional Performance Criteria</a> provided by the United States Section 508 Standards for Digital Accessibility.</li><li><a href="https://www.etsi.org/deliver/etsi_en/301500_301599/301549/03.01.01_60/en_301549v030101p.pdf">Functional Performance Statements</a> provided by the European EN 301-549 Standards for Digital Accessibility.</li><li><a href="https://www.ssa.gov/disability/professionals/bluebook/AdultListings.htm">The Listing of Impairments for adults</a> provided by the United States' Social Security Administration (SSA).</li><li><a href="https://www.dss.gov.au/our-responsibilities/disability-and-carers/benefits-payments/carer-allowance/guide-to-the-list-of-recognised-disabilities">Guide to the List of Recognised Disabilities</a> provided by the Australian Government Department of Social Services.</li><li><a href="https://askjan.org/a-to-z.cfm">The disability and accommodation taxonomy</a> provided by the Job Accommodation Network.</li><li><a href="https://w3c.github.io/apa/fast/">Framework for Accessible Specification of Technologies (FAST)</a> provided by the World Wide Web Consortium (W3C).</li>
+      {% for req in cond['requirements'] -%}
+      <li>{{ req }}</li>
+      {%- endfor %}
     </ul>
-  </p>
-  <p>We <a href="https://github.com/accessiblecommunity/useable/issues">welcome comments and feedback</a> to encourage the establishment of a worldwide mapping to help build tools and solutions for people with disabilities. Please create or comment on any of the current GitHub issues.</p>
-  <p>If you'd prefer, you can download the structure of the taxonomy as a JSON document by clicking the download dropdown in the navbar at the top.</p>
+  </div>
+  {%- endfor %}
+
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>

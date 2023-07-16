@@ -1,6 +1,8 @@
-# **use**able v0.0.1-2-g2fe3960
+# **use**able v0.0.1-4-ga3b564f
 
 `useable`, coordinated by [Accessible Community](https://www.accessiblecommunity.org), associates people with disabilities' requirements for use with broader functional categories and known diabilities. This taxonomy crosses digital and physical spaces as well as accommodations in a way that previous categorizations have not. This type of mapping is needed to help build tools and resources to help the entire disability community.
+
+The taxonomy is available for view at [https://accessiblecommunity.github.io/useable](https://accessiblecommunity.github.io/useable).
 
 The `useable` taxonomy is based around previous work in the fields of accessibility and accommodations:
 * [Functional Performance Criteria](https://www.access-board.gov/ict/#302-functional-performance-criteria) provided by the United States Section 508 Standards for Digital Accessibility.

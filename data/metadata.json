@@ -1,5 +1,6 @@
 {
 	"repository": "https://github.com/accessiblecommunity/useable",
+	"website": "https://accessiblecommunity.github.io/useable",
 	"description": "associates people with disabilities' requirements for use with broader functional categories and known disabilities and conditions. This taxonomy crosses digital and physical spaces as well as accommodations in a way that previous categorizations have not. This type of mapping is needed to help build tools and resources to help the entire disability community.",
 	"references": [{
 		"name": "Functional Performance Criteria",
