@@ -24,12 +24,15 @@
       font-size: 0.5em;
     }
     h2 {
+      color: #041058;      
       font-size: 1.8rem;
     }
     h3 {
+      color: #041058;
       font-size: 1.5rem;
     }
     h4 {
+      color: #041058;
       font-size: 1.25rem;
       margin-top: 1.5em;
     }
@@ -45,6 +48,10 @@
     img.ac-logo {
       height: 2em;
       width: 2em;
+    }
+    .icon-link > .bi {
+      height: 1.5em;
+      width: 1.5em;
     }
   </style>
 </head>
@@ -69,7 +76,10 @@
           <ul class="dropdown-menu">
             {% for cat in taxonomy['categories'] -%}
             <li>
-              <a class="dropdown-item px-4" href="#{{ cat.name }}">{{ cat.name }}</a>
+              <a class="dropdown-item icon-link px-4" href="#{{ cat.name }}">
+                <img class="bi" src="./assets/categories/{{ cat.name | lower }}.svg" aria-hidden="true">
+                {{ cat.name }}
+              </a>
             </li>
             {%- endfor %}
           </ul>
@@ -112,14 +122,20 @@
   <div class="mb-3">
     <div class="list-group contents">
       {% for cat in taxonomy['categories'] -%}
-      <a class="list-group-item list-group-item-action" href="#{{ cat.name }}">{{ cat.name }}</a>
+      <a class="list-group-item list-group-item-action icon-link ac-text" href="#{{ cat.name }}">
+        <img class="bi" src="./assets/categories/{{ cat.name | lower }}.svg" aria-hidden="true">
+        {{ cat.name }}
+      </a>
       {%- endfor %}
     </div>
   </div>
 
   {% for cat in taxonomy['categories'] -%}
   <div>
-    <h2 id="{{ cat.name }}" class="anchor">{{ cat.name }}</h2>
+    <h2 id="{{ cat.name }}" class="anchor">
+      <img class="bi d-inline-block" src="./assets/categories/{{ cat.name | lower }}.svg" aria-hidden="true" style="width: 1.5em">
+      {{ cat.name }}
+    </h2>
     {% if cat.description %}<p>{{ cat.description }}</p>{% endif %}
     <h3>Requirements for use</h3>
     <div class="list-group contents">

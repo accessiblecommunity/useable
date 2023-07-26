@@ -1,4 +1,4 @@
-from csv import reader
+import csv
 import json
 from operator import itemgetter
 import os
@@ -9,6 +9,8 @@ from . import SRC_DIR
 DATA_DIR = os.path.join(os.path.dirname(SRC_DIR), 'data')
 
 METADATA_JSON = os.path.join(DATA_DIR, 'metadata.json')
+CATEGORIES_CSV = os.path.join(DATA_DIR, 'categories.csv')
+CONDITIONS_MAP_CSV = os.path.join(DATA_DIR, 'conditions-map.csv')
 REQUIREMENTS_CSV = os.path.join(DATA_DIR, 'requirements.csv')
 
 
@@ -17,7 +19,16 @@ def load_project_metadata():
         return json.loads(input_stream.read())
 
 
-def build_reqs_for_use_with_conditions(req_row, conditions_row):
+def _load_csv(csv_file):
+    """Loads the given csv into a dictionary"""
+    with open(csv_file, "r") as f:
+        return [
+            {k.strip().lower(): v.strip() for k, v in row.items()}
+            for row in csv.DictReader(f)
+        ]
+
+
+def build_reqs_for_use_with_conditions(requirements, mapping_row, conditions_list):
     """
     Converts a row from the requirements.csv to the requirements for use structure.
 
@@ -30,11 +41,20 @@ def build_reqs_for_use_with_conditions(req_row, conditions_row):
                                    requirement for use.
     """
 
-    # Requirements for Use Columns: Category, Name, Description
-    category, req_name, req_desc, *condition_flags = req_row
+    category, req_name, *condition_flags = mapping_row
+
+    # TODO: This whole method can be more elegant and performant
+    req_desc = next(
+        (
+            row['description']
+            for row in requirements
+            if row['name'].lower() == req_name.lower().strip()
+        ),
+        None
+    )
 
     associated_conditions = [
-        conditions_row[index]  # Pull the condition from the column headers
+        conditions_list[index]  # Pull the condition from the column headers
         for index, elem
         in enumerate(condition_flags)
         if elem.strip()  # If the associated cell has anything
@@ -44,7 +64,7 @@ def build_reqs_for_use_with_conditions(req_row, conditions_row):
         category=category.strip(),
         name=req_name.strip(),
         description=req_desc or f"A forthcoming description for {req_name.lower().strip()}.",
-        conditions=associated_conditions,
+        conditions=sorted(associated_conditions),
     )
 
 
@@ -61,28 +81,30 @@ def load_taxonomy():
                                    are listed.
     """
 
-    with open(REQUIREMENTS_CSV, "r") as input_stream:
-        raw_req_rows = [row for row in reader(input_stream)]
+    categories = _load_csv(CATEGORIES_CSV)
+    requirements = _load_csv(REQUIREMENTS_CSV)
 
-    conditions_row = [name.strip() for name in raw_req_rows[0][3:]]
-    uniq_categories = {row[0].strip() for row in raw_req_rows[1:]}
+    for rows in (categories, requirements):
+        for row in rows:
+            description = row.get('description')
+            if description and not description.endswith('.'):
+                row['description'] = f"{description}."
+
+    with open(CONDITIONS_MAP_CSV, "r") as input_stream:
+        raw_cond_rows = [row for row in csv.reader(input_stream)]
+
+    conditions_list = [name.strip() for name in raw_cond_rows[0][2:]]
 
     return {
         # TODO: Switch this once categories and conditions have their own CSVs
-        'categories': sorted(
-            (
-                dict(name=cat, description=f"A forthcoming description for {cat.lower()}.")
-                for cat
-                in uniq_categories
-            ),
-            key=itemgetter('name')
-        ),
-        'conditions': sorted(conditions_row),
+        'categories': sorted(categories, key=itemgetter('name')),
+        'conditions': sorted(conditions_list),
         'requirements': sorted(
             sorted(
                 (
-                    build_reqs_for_use_with_conditions(row, conditions_row)
-                    for row in raw_req_rows[1:]
+                    build_reqs_for_use_with_conditions(
+                        requirements, row, conditions_list)
+                    for row in raw_cond_rows[1:]  # Skip header
                 ),
                 key=itemgetter('name')
             ),
