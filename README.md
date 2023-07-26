@@ -1,4 +1,4 @@
-# **use**able v0.0.1-5-gf29d752
+# **use**able v0.1.0
 
 `useable`, coordinated by [Accessible Community](https://www.accessiblecommunity.org), associates people with disabilities' requirements for use with broader functional categories and known diabilities. This taxonomy crosses digital and physical spaces as well as accommodations in a way that previous categorizations have not. This type of mapping is needed to help build tools and resources to help the entire disability community.
 
