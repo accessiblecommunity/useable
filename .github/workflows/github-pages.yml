@@ -61,7 +61,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     # Specify runner + deployment step
-    if: github.event_name != 'pull_request'
+    if: github.ref_name != 'main'
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to GitHub Pages

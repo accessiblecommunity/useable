@@ -1,4 +1,4 @@
-# **use**able v0.1.0-2-g6e7b
+# **use**able v0.1.1
 
 `useable`, provided by [Accessible Community](https://www.accessiblecommunity.org), associates people with disabilities' requirements for use with broader functional categories and known disabilities. This taxonomy crosses digital and physical spaces as well as accommodations in a way that previous categorizations have not. This type of mapping is needed to help build tools and resources to help the entire disability community.
 
@@ -13,3 +13,9 @@ The `useable` taxonomy is based around previous work in the fields of accessibil
 * [Framework for Accessible Specification of Technologies (FAST)](https://w3c.github.io/apa/fast/) provided by the World Wide Web Consortium (W3C).
 
 We [welcome comments and feedback](https://github.com/accessiblecommunity/useable/issues) to encourage the establishment of a worldwide mapping to help build tools and solutions for people with disabilities. Please create or comment on any of the current GitHub issues.
+
+## Repository layout
+
+* The `assets` folder is for all static images associated in building the site.
+* The `data` directory contains the original CSVs used to generate the taxonomy.
+* The `src` folder contains the python code used to build the site and taxonomy.
