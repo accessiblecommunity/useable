@@ -1,6 +1,6 @@
 SOURCE_DIR = ${CURDIR}/src
 PACKAGE_DIR = ${SOURCE_DIR}/useable
-DOCS_DIR = ${CURDIR}/docs
+DOCS_DIR = ${CURDIR}/_site
 
 
 # The OS environment variable is always defined by windows.
@@ -26,7 +26,7 @@ $(SOURCE_DIR)/venv:
 	@$@/bin/pip install -r $(SOURCE_DIR)/requirements.txt
 
 $(PACKAGE_DIR)/version.txt: .FORCE
-	-@git describe >$@
+	-@git describe --abbrev=1 >$@
 
 clean-venv:
 	$(RemoveDirCmd) $(call FixPath,$(SOURCE_DIR)/venv)
