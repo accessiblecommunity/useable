@@ -8,15 +8,17 @@ const __dirname = path.dirname(__filename);
 
 // https://astro.build/config
 export default defineConfig({
-    server: { host: true },
-    vite: {
-      resolve: {
-        alias: {
-          '~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap'),
-        }
-      },
-      ssr: {
-        noExternal: ['bootstrap'],
-      },
-    }    
+  site: 'https://accessiblecommunity.github.io',
+  base: '/useable',
+  server: { host: true },
+  vite: {
+    resolve: {
+      alias: {
+        '~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap'),
+      }
+    },
+    ssr: {
+      noExternal: ['bootstrap'],
+    },
+  }
 });
