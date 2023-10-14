@@ -1,0 +1,15 @@
+---
+import { getEntry, getEntries } from 'astro:content';
+
+const { id } = Astro.props;
+const req = await getEntry('requirements', id)
+const conditions = await getEntries(req.data.conditions);
+---
+<h3 id={req.id} class="anchor">{req.data.name}</h3>
+<p>{req.data.description}</p>
+<h4>Associated conditions and disabilities</h4>
+<ul>
+  {conditions.map((condition: any) => 
+    <li>{ condition.data.name }</li>
+  )}
+</ul>
