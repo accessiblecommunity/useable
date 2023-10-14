@@ -1,4 +1,3 @@
-
 ## **use**able
 
 `useable`, provided by [Accessible Community](https://www.accessiblecommunity.org), associates people with disabilities' requirements for use with broader functional categories and known disabilities. This taxonomy crosses digital and physical spaces as well as accommodations in a way that previous categorizations have not. This type of mapping is needed to help build tools and resources to help the entire disability community.
@@ -15,7 +14,7 @@ We [welcome comments and feedback](https://github.com/accessiblecommunity/useabl
 
 ### Repository layout
 
-* The [`data`](https://github.com/accessiblecommunity/useable/tree/main/assets) directory contains the original CSVs used to generate the taxonomy.
+* The [`data`](https://github.com/accessiblecommunity/useable/tree/main/data) directory contains the original CSVs used to generate the taxonomy.
     * When cloning the repository, you make use your local [Node.js](https://nodejs.org/) install, or the supplied [Docker](https://www.docker.com/) container.
-* The [`site`](https://github.com/accessiblecommunity/useable/tree/main/assets) folder contains the javascript code used to build the site.
+* The [`site`](https://github.com/accessiblecommunity/useable/tree/main/site) folder contains the javascript code used to build the site.
     * `useable` is powered by [Astro](https://astro.build/).
