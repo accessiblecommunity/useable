@@ -13,6 +13,8 @@ const categories = await getCollection('categories');
 
 import '../styles/global.scss';
 
+const prefix = import.meta.env.BASE_URL;
+
 const addActive = (classes: String, link: String) => {
   const activeClass = activeLinks.includes(link) ? 'active' : ''
   return [classes, activeClass].join(' ').trim()
@@ -64,7 +66,7 @@ const addActive = (classes: String, link: String) => {
           <ul class="dropdown-menu">
             {categories.map(cat =>
               <li>
-                <a class={addActive('dropdown-item icon-link px-4', cat.id)} href={`/${ cat.id }`}>
+                <a class={addActive('dropdown-item icon-link px-4', cat.id)} href={`${prefix}/${ cat.id }`}>
                   <img class="bi me-1" src={cat.data.image.src} aria-hidden="true">
                   { cat.data.name }
                 </a>
@@ -73,7 +75,7 @@ const addActive = (classes: String, link: String) => {
           </ul>
         </li>
         <li class="nav-item">
-          <a class={addActive('nav-link', 'conditions')} href="/conditions">Conditions and Disabilities</a>
+          <a class={addActive('nav-link', 'conditions')} href={`${prefix}/conditions`}>Conditions and Disabilities</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -81,16 +83,16 @@ const addActive = (classes: String, link: String) => {
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a class="dropdown-item" href="/data/useable.tgz" download>as CSVs</a>
+              <a class="dropdown-item" href={`${prefix}/data/useable.tgz`} download>as CSVs</a>
             </li>
             <li>
-              <a class="dropdown-item" href="/data/useable.json" download>as JSON</a>
+              <a class="dropdown-item" href={`${prefix}/data/useable.json`} download>as JSON</a>
             </li>
           </ul>
         </li>
         <li class="nav-item">
           <a class="nav-link icon-link" href="https://github.com/accessiblecommunity/useable">
-            <img class="bi" src="/images/github-mark.svg" aria-hidden="true" />
+            <img class="bi" src={`${prefix}/images/github-mark.svg`} aria-hidden="true" />
             <span class="visually-hidden">GitHub </span>Repository
           </a>
         </li>
@@ -98,11 +100,11 @@ const addActive = (classes: String, link: String) => {
       <ul class="navbar-nav">
         <li class="nav-item">
           <a class="d-none d-lg-block nav-link" href="https://www.accessiblecommunity.org">
-            <img class="ac-logo" src="/images/ac_logo_blue.png" aria-hidden="true" />
+            <img class="ac-logo" src={`${prefix}/images/ac_logo_blue.png`} aria-hidden="true" />
             <span class="visually-hidden">Accessible Community</span>
           </a>
           <a class="d-block d-lg-none nav-link icon-link ac-text" href="https://www.accessiblecommunity.org">
-            <img class="bi" src="/images/ac_logo_blue.png" aria-hidden="true" />
+            <img class="bi" src={`${prefix}/images/ac_logo_blue.png`} aria-hidden="true" />
             Accessible <b>Community</b>
           </a>
         </li>
