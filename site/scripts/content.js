@@ -179,9 +179,14 @@ const processCSV = async ({filename, on_parse = parseToArray, ...csv_config}) =>
   }
 
   console.log("Writing taxonomy...")
+  const dataDir = resolve(__dirname, `../public/data`);
+  if (!fs.existsSync(dataDir)){
+    fs.mkdirSync(dataDir);
+  }
+
   let json = JSON.stringify(taxonomy);
   fs.writeFile(
-    resolve(__dirname, `../public/data/useable.json`),
+    `${dataDir}/useable.json`,
     json,
     {
       flag: 'w',
