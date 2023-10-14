@@ -1,0 +1,25 @@
+{
+  "name": "useable",
+  "type": "module",
+  "version": "0.2.0",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "content": "node scripts/content.js",
+    "tarball": "node scripts/tarball.js"
+  },
+  "dependencies": {
+    "@fontsource/archivo": "^5.0.8",
+    "@popperjs/core": "^2.11.8",
+    "astro": "^3.1.0",
+    "bootstrap": "^5.3.2",
+    "csv-parse": "^5.5.0",
+    "dotenv": "^16.3.1",
+    "lodash-es": "^4.17.21",
+    "sass": "^1.67.0",
+    "tar": "^6.2.0"
+  }
+}

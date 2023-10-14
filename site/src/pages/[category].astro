@@ -1,0 +1,37 @@
+---
+import { getCollection, getEntries } from 'astro:content';
+
+export async function getStaticPaths() {
+  const categories = await getCollection('categories');
+  return categories.map(category => ({
+    params: { category: category.id },
+    props: { category },
+  }));  
+}
+
+const { category } = Astro.props;
+const requirements = await getEntries(category.data.requirements);
+
+import Layout from '../layouts/Layout.astro';
+import Requirement from '../components/Requirement.astro'
+---
+<Layout title={category.data.name} activeLinks={['categories', category.id]}>
+  <h2 slot="header">
+    <img class="bi d-inline-block me-1" src={category.data.image.src} aria-hidden="true" style="width: 1.25em" />
+    {category.data.name}
+  </h2>
+  <p>{category.data.description}</p>
+  <h3>Requirements for use</h3>
+  <div class="list-group contents">
+    {requirements.map((req: any) =>
+      <a href={`#${req.id}`} class="list-group-item list-group-item-action">
+        { req.data.name }
+      </a>
+    )}
+  </div>
+  <div>
+    {category.data.requirements.map((req) =>
+      <Requirement id={req.id} />
+    )}
+  </div>
+</Layout>

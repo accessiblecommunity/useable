@@ -1,8 +1,7 @@
-# **use**able v0.1.1
+
+## **use**able
 
 `useable`, provided by [Accessible Community](https://www.accessiblecommunity.org), associates people with disabilities' requirements for use with broader functional categories and known disabilities. This taxonomy crosses digital and physical spaces as well as accommodations in a way that previous categorizations have not. This type of mapping is needed to help build tools and resources to help the entire disability community.
-
-The taxonomy is available for view at [https://accessiblecommunity.github.io/useable](https://accessiblecommunity.github.io/useable).
 
 The `useable` taxonomy is based around previous work in the fields of accessibility and accommodations:
 * [Functional Performance Criteria](https://www.access-board.gov/ict/#302-functional-performance-criteria) provided by the United States Section 508 Standards for Digital Accessibility.
@@ -14,8 +13,9 @@ The `useable` taxonomy is based around previous work in the fields of accessibil
 
 We [welcome comments and feedback](https://github.com/accessiblecommunity/useable/issues) to encourage the establishment of a worldwide mapping to help build tools and solutions for people with disabilities. Please create or comment on any of the current GitHub issues.
 
-## Repository layout
+### Repository layout
 
-* The `assets` folder is for all static images associated in building the site.
-* The `data` directory contains the original CSVs used to generate the taxonomy.
-* The `src` folder contains the python code used to build the site and taxonomy.
+* The [`data`](https://github.com/accessiblecommunity/useable/tree/main/assets) directory contains the original CSVs used to generate the taxonomy.
+    * When cloning the repository, you make use your local [Node.js](https://nodejs.org/) install, or the supplied [Docker](https://www.docker.com/) container.
+* The [`site`](https://github.com/accessiblecommunity/useable/tree/main/assets) folder contains the javascript code used to build the site.
+    * `useable` is powered by [Astro](https://astro.build/).
