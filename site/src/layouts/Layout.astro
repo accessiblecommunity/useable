@@ -12,22 +12,12 @@ import { getCollection } from 'astro:content';
 const categories = await getCollection('categories');
 
 import '../styles/global.scss';
-
 const prefix = import.meta.env.BASE_URL;
 
 const addActive = (classes: String, link: String) => {
   const activeClass = activeLinks.includes(link) ? 'active' : ''
   return [classes, activeClass].join(' ').trim()
 }
-
-// <script type="module">
-// 	import { Collapse, Dropdown } from '../../node_modules/bootstrap/dist/js/bootstrap.esm.min.js'
-// 	Array.from(document.querySelectorAll('.dropdown'))
-// 	  .forEach(node => new Dropdown(node))
-// 	Array.from(document.querySelectorAll('.collapse'))
-// 	  .forEach(node => new Collapse(node))
-// </script>
-
 ---
 <!doctype html>
 <html lang="en">
@@ -36,7 +26,7 @@ const addActive = (classes: String, link: String) => {
   <meta name="description" content="Astro description" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="generator" content={Astro.generator} />
-  <link rel="icon" href="/favicon.png" />
+  <link rel="icon" href={`${prefix}/favicon.png`} />
   <title>useable v{ version }</title>
   <script>
     import "../scripts/dark-mode.js";
@@ -52,7 +42,7 @@ const addActive = (classes: String, link: String) => {
       <span class="navbar-toggler-icon"></span>
     </button>
     <h1 class="navbar-brand ms-3 mt-1 mb-0">
-      <a class="ac-text" href="/">
+      <a class="ac-text" href={ prefix }>
         <b>use</b>able<br/>
         <span class="version muted">v{ version }</span>
       </a>
@@ -135,7 +125,14 @@ const addActive = (classes: String, link: String) => {
   }
 </style>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script>
+  import { Collapse, Dropdown } from '~bootstrap-es'
+
+  Array.from(document.querySelectorAll('.dropdown'))
+    .forEach(node => new Dropdown(node))
+  Array.from(document.querySelectorAll('.collapse'))
+    .forEach(node => new Collapse(node))
+</script>
 
 </body>
 </html>
