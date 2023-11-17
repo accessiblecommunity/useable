@@ -41,12 +41,12 @@ const addActive = (classes: String, link: String) => {
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <h1 class="navbar-brand ms-3 mt-1 mb-0">
+    <div class="navbar-brand ms-3 mt-1 mb-0">
       <a class="ac-text" href={ prefix }>
         <b>use</b>able<br/>
         <span class="version muted">v{ version }</span>
       </a>
-    </h1>
+    </div>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <li class="nav-item dropdown">
@@ -106,17 +106,17 @@ const addActive = (classes: String, link: String) => {
 <main id="main" class="container-md">
   {showHeader && (
     <slot name="header">
-      <h2>{ title }</h2>
+      <h1>{ title }</h1>
     </slot>
   )}
   <slot />
 </main>
 
 <style>
-  h1.navbar-brand {
+  .navbar-brand {
     line-height: 0.9rem;
   }
-  h1 .version {
+  .version {
     font-size: 0.5em;
   }
   img.ac-logo {
@@ -131,7 +131,7 @@ const addActive = (classes: String, link: String) => {
   Array.from(document.querySelectorAll('.dropdown'))
     .forEach(node => new Dropdown(node))
   Array.from(document.querySelectorAll('.collapse'))
-    .forEach(node => new Collapse(node))
+    .forEach(node => new Collapse(node, { toggle: false }))
 </script>
 
 </body>

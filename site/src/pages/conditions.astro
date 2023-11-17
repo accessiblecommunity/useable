@@ -26,7 +26,7 @@ import Layout from '../layouts/Layout.astro'
   </p>
   {conditions.map(condition =>
     <div>
-      <h3>{ condition.data.name }</h3>
+      <h2>{ condition.data.name }</h2>
       <ul>
         {requirementMap[condition.id].map(name =>
           <li>{name}</li>
