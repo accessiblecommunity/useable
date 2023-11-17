@@ -8,10 +8,10 @@
 // 2. Include any default variable overrides here
 $font-family-sans-serif:      'Archivo', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 
-$h1-font-size:                2rem;
-$h2-font-size:                1.75rem;
-$h3-font-size:                1.5rem;
-$h4-font-size:                1.25rem;
+$h1-font-size:                2.1rem;
+$h2-font-size:                1.7rem;
+$h3-font-size:                1.4rem;
+$h4-font-size:                1.2rem;
 $h5-font-size:                1.1rem;
 $h6-font-size:                1rem;
 $headings-color:              #041058;
@@ -56,23 +56,23 @@ $color-mode-type: data;
 @import "bootstrap/scss/utilities/api";
 
 // 8. Add additional custom code here
+h1:before,
 h2:before,
 h3:before,
 h4:before,
-h5:before,
-h6:before {
+h5:before {
     content: "";
     display: block;
 }  
-h2:before {
+h1:before {
     height: 4.5rem;
 }
-h3:before,
-h4:before {
+h2:before,
+h3:before {
     height: 4rem;
 }  
-h5:before,
-h6:before {
+h4:before,
+h5:before {
     height: 3rem;
 }  
 
