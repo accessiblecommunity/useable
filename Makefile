@@ -31,13 +31,18 @@ ifndef number
 	$(error Please define a 'number' that represents the new version)
 endif
 	@docker-compose exec astro sh -c "npm version ${number}"
+# @git tag -a v${number}
 
-preview:
-	@docker-compose exec astro sh -c "npm run build"
+preview: $(SOURCE_DIR)/dist
 	@docker-compose exec astro sh -c "npm run preview"
 
 build:
 	@docker-compose build
+
+dist: clean-js-dist $(SOURCE_DIR)/dist
+
+$(SOURCE_DIR)/dist:
+	@docker-compose exec astro sh -c "npm run build"
 
 $(SOURCE_DIR)/node_modules:
 	@echo Install JS dependencies. This will take awhile.
