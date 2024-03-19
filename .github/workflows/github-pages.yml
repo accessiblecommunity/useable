@@ -14,23 +14,11 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Checkout your repository using git
-        uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: 📦 Install dependencies
-        working-directory: ./site
-        run: npm install
-
-      - name: Establish content files
-        working-directory: ./site
-        run: npm run content
-
-      - name: Create tarball of CSVs
-        working-directory: ./site
-        run: npm run tarball
-
-      - name: Install, build, and upload your site
-        uses: withastro/action@v1
+      - name: Install and build site
+        uses: withastro/action@v2
         with:
           path: site
 
@@ -49,4 +37,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4

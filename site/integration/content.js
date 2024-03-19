@@ -1,5 +1,4 @@
-#!/usr/bin/env node
-
+import fg from 'fast-glob';
 import fs from 'fs';
 import dotenv from 'dotenv';
 import { dirname, resolve } from 'path';
@@ -19,6 +18,7 @@ const parseToArray = async (parser) => {
   }
   return results;
 };
+
 const parseToMap = async (parser) => {
   const state = {};
   for await (const [key, value] of parser) {
@@ -40,7 +40,41 @@ const processCSV = async ({filename, on_parse = parseToArray, ...csv_config}) =>
   return results;
 };
 
-(async () => {
+async function cleanDirectories(dirNames, logger) {
+  const contentDirs = dirNames.map(dir => {
+    logger.info(`Cleaning ${dir}...`);
+    return resolve(__dirname, `../src/content/${dir}/*.json`);
+  });
+
+  const entries = await fg.glob(contentDirs, { dot: true });
+  for (const filename of entries) {
+    fs.unlink(filename, function(err) {
+        if (err)
+          return logger.error(err);
+        logger.debug(`${filename} deleted successfully.`);
+    });
+  }
+}
+
+function writeDataToFile(data, filename, logger) {
+  const json = JSON.stringify(data);
+  logger.debug(`Writing ${filename}`);
+  fs.writeFile(
+    filename,
+    json,
+    {
+      flag: 'w',
+    },
+    (err) => err && logger.error(err)
+  );
+}
+
+export default async (logger) => {
+  if (!logger)
+    logger = console;
+
+  await cleanDirectories(['categories', 'conditions', 'requirements'], logger);
+
   const requirementMap = await processCSV({
     filename: 'requirements',
     objname: 'name',
@@ -74,16 +108,12 @@ const processCSV = async ({filename, on_parse = parseToArray, ...csv_config}) =>
     },
   });
   
-  console.log("Writing requirements...")
+  logger.info("Writing requirements...");
   for (const data of requirements) {
-    let json = JSON.stringify(data);
-    fs.writeFile(
+    writeDataToFile(
+      data,
       resolve(__dirname, `../src/content/requirements/${data.id}.json`),
-      json,
-      {
-        flag: 'w',
-      },
-      (err) => err && console.error(err)
+      logger
     );
   }
 
@@ -122,16 +152,12 @@ const processCSV = async ({filename, on_parse = parseToArray, ...csv_config}) =>
     },
   });
 
-  console.log("Writing categories...")
+  logger.info("Writing categories...");
   for (const data of categories) {
-    let json = JSON.stringify(data);
-    fs.writeFile(
+    writeDataToFile(
+      data,
       resolve(__dirname, `../src/content/categories/${data.id}.json`),
-      json,
-      {
-        flag: 'w',
-      },
-      (err) => err && console.error(err)
+      logger
     );
   }
 
@@ -156,16 +182,12 @@ const processCSV = async ({filename, on_parse = parseToArray, ...csv_config}) =>
     },
   });
 
-  console.log("Writing conditions...")
+  logger.info("Writing conditions...");
   for (const data of conditions) {
-    let json = JSON.stringify(data);
-    fs.writeFile(
+    writeDataToFile(
+      data,
       resolve(__dirname, `../src/content/conditions/${data.id}.json`),
-      json,
-      {
-        flag: 'w',
-      },
-      (err) => err && console.error(err)
+      logger
     );
   }
 
@@ -176,21 +198,17 @@ const processCSV = async ({filename, on_parse = parseToArray, ...csv_config}) =>
       categories,
       requirements
     }
-  }
+  };
 
-  console.log("Writing taxonomy...")
+  logger.info("Writing taxonomy...");
   const dataDir = resolve(__dirname, `../public/data`);
   if (!fs.existsSync(dataDir)){
     fs.mkdirSync(dataDir);
   }
 
-  let json = JSON.stringify(taxonomy);
-  fs.writeFile(
+  writeDataToFile(
+    taxonomy,
     `${dataDir}/useable.json`,
-    json,
-    {
-      flag: 'w',
-    },
-    (err) => err && console.error(err)
+    logger
   );
-})();
+};

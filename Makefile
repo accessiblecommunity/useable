@@ -14,7 +14,7 @@ else
 	FixPath = $1
 endif
 
-serve: content
+serve: up
 	@docker-compose exec astro sh -c "npm run dev"
 
 up:
@@ -32,14 +32,9 @@ ifndef number
 endif
 	@docker-compose exec astro sh -c "npm version ${number}"
 
-preview: content
+preview:
 	@docker-compose exec astro sh -c "npm run build"
 	@docker-compose exec astro sh -c "npm run preview"
-
-content: up $(SOURCE_DIR)/node_modules
-	@echo "Generating content"
-	-@docker-compose exec astro sh -c "npm run content"
-	-@docker-compose exec astro sh -c "npm run tarball"
 
 build:
 	@docker-compose build
