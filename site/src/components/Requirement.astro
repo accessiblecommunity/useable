@@ -1,4 +1,5 @@
 ---
+import { isEmpty } from 'lodash-es';
 import { getEntry, getEntries } from 'astro:content';
 
 const { id } = Astro.props;
@@ -9,7 +10,10 @@ const conditions = await getEntries(req.data.conditions);
 <p>{req.data.description}</p>
 <h3>Associated conditions and disabilities</h3>
 <ul>
-  {conditions.map((condition: any) => 
-    <li>{ condition.data.name }</li>
-  )}
+  { isEmpty(conditions)
+    ? <li>None</li>
+    : conditions.map((condition: any) => 
+      <li>{ condition.data.name }</li>
+    )
+  }
 </ul>

@@ -18,3 +18,4 @@ We [welcome comments and feedback](https://github.com/accessiblecommunity/useabl
     * When cloning the repository, you make use your local [Node.js](https://nodejs.org/) install, or the supplied [Docker](https://www.docker.com/) container.
 * The [`site`](https://github.com/accessiblecommunity/useable/tree/main/site) folder contains the javascript code used to build the site.
     * `useable` is powered by [Astro](https://astro.build/).
+    * The `integration` folder is an Astro integration that converts the raw data into Astro content.

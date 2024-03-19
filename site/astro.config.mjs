@@ -1,6 +1,8 @@
 import { defineConfig } from 'astro/config';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import buildContent from "./integration";
+
 
 // https://flaviocopes.com/fix-dirname-not-defined-es-module-scope/
 const __filename = fileURLToPath(import.meta.url);
@@ -21,5 +23,8 @@ export default defineConfig({
     ssr: {
       noExternal: ['bootstrap'],
     },
-  }
+  },
+  integrations: [
+    buildContent(),
+  ],
 });
