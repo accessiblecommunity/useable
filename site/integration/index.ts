@@ -6,9 +6,9 @@ import compressContent from './tarball';
 export default (): AstroIntegration => ({
   name: "build-useable-content",
   hooks: {
-    "astro:config:done": ({ logger }) => {
-      generateContent(logger);
-      compressContent(logger);
+    "astro:config:done": async ({ logger }) => {
+      await generateContent(logger);
+      await compressContent(logger);
     },
   },
 });

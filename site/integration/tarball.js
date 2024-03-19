@@ -5,7 +5,7 @@ import fs from 'fs';
 import tar from 'tar';
 
 
-export default (logger) => {
+export default async (logger) => {
   if (!logger)
     logger = console;
 
@@ -18,14 +18,15 @@ export default (logger) => {
   }
 
   const output = resolve(__dirname, '../public/data/useable.tgz')
-  tar.c(
+  const csvFiles = await fg.glob(['*.csv'], { cwd: dataDir })
+
+  await tar.c(
     {
       file: output,
       gzip: true,
       cwd: dataDir,
     },
-    fg.globSync(['*.csv'], { cwd: dataDir })
-  ).then(_ => {
-    logger.info(`Generated ${output}`)
-  })
+    csvFiles
+  );
+  logger.info(`Generated ${output}`);
 };
