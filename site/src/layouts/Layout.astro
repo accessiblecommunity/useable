@@ -12,22 +12,37 @@ import { getCollection } from 'astro:content';
 const categories = await getCollection('categories');
 
 import '../styles/global.scss';
-const prefix = import.meta.env.BASE_URL;
+const baseUrl = import.meta.env.BASE_URL;
 
 const addActive = (classes: String, link: String) => {
   const activeClass = activeLinks.includes(link) ? 'active' : ''
   return [classes, activeClass].join(' ').trim()
 }
+
+const description = "useable, provided by Accessible Community, associates people with disabilities' requirements for use with broader functional categories and known disabilities.";
+const fullTitle = `useable v${version} - ${title}`
 ---
 <!doctype html>
 <html lang="en">
 <head>
+  <title set:text={fullTitle} />
   <meta charset="utf-8">
-  <meta name="description" content="Astro description" />
+  <meta name="description" content={description} />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="generator" content={Astro.generator} />
-  <link rel="icon" href={`${prefix}/favicon.png`} />
-  <title>useable v{ version }</title>
+
+  {/* Opengraph Protocol support - https://ogp.me/ */}
+  <meta property="og:url" content={Astro.url} />
+  <meta property="og:description" content={description} />
+  <meta property="og:title" content={fullTitle} />
+
+  {/* Twitter's OGP metadata */}
+  <meta name="twitter:description" content={description} />
+  <meta property="twitter:domain" content={Astro.url.host} />
+  <meta property="twitter:url" content={Astro.url} />
+  <meta name="twitter:title" content={fullTitle} />
+
+  <link rel="icon" href={`${baseUrl}/favicon.png`} />
   <script>
     import "../scripts/dark-mode.js";
   </script>
@@ -47,7 +62,7 @@ const addActive = (classes: String, link: String) => {
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="navbar-brand ms-3 mt-1 mb-0">
-      <a class="ac-text" href={ prefix }>
+      <a class="ac-text" href={ baseUrl }>
         <b>use</b>able<br/>
         <span class="version muted">v{ version }</span>
       </a>
@@ -61,7 +76,7 @@ const addActive = (classes: String, link: String) => {
           <ul class="dropdown-menu">
             {categories.map(cat =>
               <li>
-                <a class={addActive('dropdown-item icon-link px-4', cat.id)} href={`${prefix}/${ cat.id }`}>
+                <a class={addActive('dropdown-item icon-link px-4', cat.id)} href={`${baseUrl}/${ cat.id }`}>
                   <img class="bi me-1" src={cat.data.image.src} aria-hidden="true">
                   { cat.data.name }
                 </a>
@@ -70,7 +85,7 @@ const addActive = (classes: String, link: String) => {
           </ul>
         </li>
         <li class="nav-item">
-          <a class={addActive('nav-link', 'conditions')} href={`${prefix}/conditions`}>Conditions and Disabilities</a>
+          <a class={addActive('nav-link', 'conditions')} href={`${baseUrl}/conditions`}>Conditions and Disabilities</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -78,16 +93,16 @@ const addActive = (classes: String, link: String) => {
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a class="dropdown-item" href={`${prefix}/data/useable.tgz`} download>as CSVs</a>
+              <a class="dropdown-item" href={`${baseUrl}/data/useable.tgz`} download>as CSVs</a>
             </li>
             <li>
-              <a class="dropdown-item" href={`${prefix}/data/useable.json`} download>as JSON</a>
+              <a class="dropdown-item" href={`${baseUrl}/data/useable.json`} download>as JSON</a>
             </li>
           </ul>
         </li>
         <li class="nav-item">
           <a class="nav-link icon-link" href="https://github.com/accessiblecommunity/useable">
-            <img class="bi" src={`${prefix}/images/github-mark.svg`} aria-hidden="true" />
+            <img class="bi" src={`${baseUrl}/images/github-mark.svg`} aria-hidden="true" />
             <span class="visually-hidden">GitHub </span>Repository
           </a>
         </li>
@@ -95,11 +110,11 @@ const addActive = (classes: String, link: String) => {
       <ul class="navbar-nav">
         <li class="nav-item">
           <a class="d-none d-lg-block nav-link" href="https://www.accessiblecommunity.org">
-            <img class="ac-logo" src={`${prefix}/images/ac_logo_blue.png`} aria-hidden="true" />
+            <img class="ac-logo" src={`${baseUrl}/images/ac_logo_blue.png`} aria-hidden="true" />
             <span class="visually-hidden">Accessible Community</span>
           </a>
           <a class="d-block d-lg-none nav-link icon-link ac-text" href="https://www.accessiblecommunity.org">
-            <img class="bi" src={`${prefix}/images/ac_logo_blue.png`} aria-hidden="true" />
+            <img class="bi" src={`${baseUrl}/images/ac_logo_blue.png`} aria-hidden="true" />
             Accessible <b>Community</b>
           </a>
         </li>
