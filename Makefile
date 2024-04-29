@@ -1,3 +1,4 @@
+CONTAINER = astro
 SOURCE_DIR = ${CURDIR}/site
 
 # The OS environment variable is always defined by windows.
@@ -15,7 +16,7 @@ else
 endif
 
 serve: up
-	@docker-compose exec astro sh -c "npm run dev"
+	@docker-compose exec $(CONTAINER) sh -c "npm run dev"
 
 up:
 	@docker-compose up --detach
@@ -24,17 +25,17 @@ down:
 	@docker-compose down
 
 shell:
-	@docker-compose exec astro bash
+	@docker-compose exec $(CONTAINER) bash
 
 version: up
 ifndef number
 	$(error Please define a 'number' that represents the new version)
 endif
-	@docker-compose exec astro sh -c "npm version ${number}"
+	@docker-compose exec $(CONTAINER) sh -c "npm version ${number}"
 # @git tag -a v${number}
 
 preview: $(SOURCE_DIR)/dist
-	@docker-compose exec astro sh -c "npm run preview"
+	@docker-compose exec $(CONTAINER) sh -c "npm run preview"
 
 build:
 	@docker-compose build
