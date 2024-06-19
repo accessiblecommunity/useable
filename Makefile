@@ -43,11 +43,11 @@ build:
 dist: clean-js-dist $(SOURCE_DIR)/dist
 
 $(SOURCE_DIR)/dist:
-	@docker-compose exec astro sh -c "npm run build"
+	@docker-compose exec $(CONTAINER) sh -c "npm run build"
 
 $(SOURCE_DIR)/node_modules:
 	@echo Install JS dependencies. This will take awhile.
-	docker-compose exec astro sh -c "npm install"
+	docker-compose exec $(CONTAINER) sh -c "npm install"
 
 clean-js-dist:
 	$(RemoveDirCmd) $(call FixPath,$(SOURCE_DIR)/dist)
