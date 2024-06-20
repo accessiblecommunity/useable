@@ -1,14 +1,12 @@
-version: "3.7"
-
 services:
   astro:
-    container_name: astro
+    container_name: useable-astro
     build:
       context: ./site
       target: dev-test
     restart: always
     ports:
-      - 4321:4321
-      - 4322:4322
+      - 4323:4323
+      - 4324:4324
     volumes:
       - '.:/useable'

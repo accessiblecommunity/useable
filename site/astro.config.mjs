@@ -12,7 +12,7 @@ const __dirname = path.dirname(__filename);
 export default defineConfig({
   site: 'https://accessiblecommunity.github.io',
   base: '/useable',
-  server: { host: true },
+  server: { host: true, port: 4323 },
   vite: {
     resolve: {
       alias: {
