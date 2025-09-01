@@ -92,7 +92,7 @@ out
 dist
 
 # Astro build / generate output
-.astro/
+.astro
 
 # Gatsby files
 .cache/
