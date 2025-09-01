@@ -49,14 +49,27 @@ $(SOURCE_DIR)/node_modules:
 	@echo Install JS dependencies. This will take awhile.
 	docker-compose exec $(CONTAINER) sh -c "npm install"
 
+upgrade-astro: up
+	@echo Updating Astro specific dependencies.
+	@docker compose exec ${CONTAINER} sh -c "npx @astrojs/upgrade"
+
+update-dependencies: up
+	@echo Updating package.json.
+	@docker compose exec ${CONTAINER} sh -c "npx npm-check-updates -u"
+
+clean-astro-content:
+	@echo Removing the Astro content directories.
+	@$(RemoveDirCmd) $(call FixPath,$(SOURCE_DIR)/.astro)
+
 clean-js-dist:
 	$(RemoveDirCmd) $(call FixPath,$(SOURCE_DIR)/dist)
 
 clean-js-modules:
 	$(RemoveDirCmd) $(call FixPath,$(SOURCE_DIR)/node_modules)
 
-clean: clean-js-dist clean-js-modules
+clean: clean-astro-content clean-js-dist clean-js-modules
 
 .PHONY: serve up down build shell \
-	clean clean-js-dist clean-js-modules \
+    upgrade-astro update-dependencies \
+	clean clean-astro-content clean-js-dist clean-js-modules \
 	.FORCE
