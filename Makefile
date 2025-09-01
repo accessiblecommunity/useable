@@ -15,7 +15,7 @@ else
 	FixPath = $1
 endif
 
-serve: up
+serve: up $(SOURCE_DIR)/node_modules
 	@docker-compose exec $(CONTAINER) sh -c "npm run dev"
 
 up:

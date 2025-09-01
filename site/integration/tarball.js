@@ -2,7 +2,7 @@ import { fileURLToPath } from 'url';
 import { dirname, resolve } from 'path';
 import fg from 'fast-glob';
 import fs from 'fs';
-import tar from 'tar';
+import { create } from 'tar';
 
 
 export default async (logger) => {
@@ -20,7 +20,7 @@ export default async (logger) => {
   const output = resolve(__dirname, '../public/data/useable.tgz')
   const csvFiles = await fg.glob(['*.csv'], { cwd: dataDir })
 
-  await tar.c(
+  await create(
     {
       file: output,
       gzip: true,
