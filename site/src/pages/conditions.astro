@@ -1,0 +1,37 @@
+---
+import { getCollection, getEntries, getEntry } from 'astro:content'
+
+const conditions = await getCollection('conditions')
+
+let requirementMap = {};
+for (const condition of conditions) {
+  requirementMap[condition.id] = []
+  const relatedReqs = await getEntries(condition.data.requirements)
+  for (const req of relatedReqs) {
+    const cat = await getEntry(req.data.category)
+    requirementMap[condition.id].push(`${cat.data.name}: ${req.data.name}`)
+  }
+  requirementMap[condition.id].sort() 
+}
+
+import Layout from '../layouts/Layout.astro'
+---
+<Layout title="Conditions and Disabilities" activeLinks={["conditions"]}>
+  <p>
+    The following is a list of all of the conditions and disabilities registered in this
+    taxonomy and the requirements for use associated with them. It's important to note that
+    not every individual experiencing a condition or disability will need accommodations
+    for every requirement of use, as each individual's experience and limitations are
+    different.
+  </p>
+  {conditions.map(condition =>
+    <div>
+      <h2>{ condition.data.name }</h2>
+      <ul>
+        {requirementMap[condition.id].map(name =>
+          <li>{name}</li>
+        )}
+      </ul>
+    </div>
+  )}
+</Layout>

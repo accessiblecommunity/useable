@@ -1,0 +1,92 @@
+@charset "UTF-8";
+
+// From https://getbootstrap.com/docs/5.3/customize/sass/#importing
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+$font-family-sans-serif:      'Archivo', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+
+$h1-font-size:                2.1rem;
+$h2-font-size:                1.7rem;
+$h3-font-size:                1.4rem;
+$h4-font-size:                1.2rem;
+$h5-font-size:                1.1rem;
+$h6-font-size:                1rem;
+$headings-color:              #041058;
+$headings-font-weight:        400;
+
+$container-padding-x:         3rem;
+
+$navbar-brand-font-size:      1.3rem;
+$navbar-brand-height:         0.9rem;
+$navbar-brand-padding-y:      0.3125rem;
+
+$color-mode-type: data;
+
+// 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+
+// 4. Include any default map overrides here
+
+// 5. Include remainder of required parts
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot";
+
+// 6. Optionally include any other parts as needed
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/images";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/transitions";
+@import "bootstrap/scss/dropdown";
+@import "bootstrap/scss/nav";
+@import "bootstrap/scss/navbar";
+// @import "bootstrap/scss/card";
+@import "bootstrap/scss/list-group";
+
+// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+@import "bootstrap/scss/helpers";
+@import "bootstrap/scss/utilities/api";
+
+// 8. Add additional custom code here
+h1:before,
+h2:before,
+h3:before,
+h4:before,
+h5:before {
+    content: "";
+    display: block;
+}  
+h1:before {
+    height: 4.5rem;
+}
+h2:before,
+h3:before {
+    height: 4rem;
+}  
+h4:before,
+h5:before {
+    height: 3rem;
+}  
+
+.ac-text {
+    color: #041058;
+    text-decoration: none;
+}
+@include color-mode(dark) {
+    .ac-text, h1, h2, h3, h4, h5, h6 {
+        color: var(--bs-primary-text-emphasis);
+    }
+    .bi {
+        filter: invert(75%) sepia(53%) saturate(3857%) hue-rotate(191deg) brightness(100%) contrast(94%);
+    }
+}
+
+

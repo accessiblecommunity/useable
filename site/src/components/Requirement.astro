@@ -1,0 +1,19 @@
+---
+import { isEmpty } from 'lodash-es';
+import { getEntry, getEntries } from 'astro:content';
+
+const { id } = Astro.props;
+const req = await getEntry('requirements', id)
+const conditions = await getEntries(req.data.conditions);
+---
+<h2 id={req.id} class="anchor">{req.data.name}</h2>
+<p>{req.data.description}</p>
+<h3>Associated conditions and disabilities</h3>
+<ul>
+  { isEmpty(conditions)
+    ? <li>None</li>
+    : conditions.map((condition: any) => 
+      <li>{ condition.data.name }</li>
+    )
+  }
+</ul>
