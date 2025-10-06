@@ -14,7 +14,7 @@
   "dependencies": {
     "@fontsource/archivo": "^5.0.8",
     "@popperjs/core": "^2.11.8",
-    "astro": "^5.13.5",
+    "astro": "^5.14.1",
     "bootstrap": "^5.3.8",
     "csv-parse": "^5.5.0",
     "dotenv": "^16.3.1",

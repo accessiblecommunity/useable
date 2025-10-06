@@ -42,10 +42,10 @@ build:
 
 dist: clean-js-dist $(SOURCE_DIR)/dist
 
-$(SOURCE_DIR)/dist:
+$(SOURCE_DIR)/dist: $(SOURCE_DIR)/node_modules
 	@docker-compose exec $(CONTAINER) sh -c "npm run build"
 
-$(SOURCE_DIR)/node_modules:
+$(SOURCE_DIR)/node_modules: up
 	@echo Install JS dependencies. This will take awhile.
 	docker-compose exec $(CONTAINER) sh -c "npm install"
 
