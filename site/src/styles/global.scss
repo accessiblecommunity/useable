@@ -67,13 +67,13 @@ h5:before {
 h1:before {
     height: 4.5rem;
 }
-h2:before,
-h3:before {
+h2:before {
     height: 4rem;
 }  
+h3:before,
 h4:before,
 h5:before {
-    height: 3rem;
+    height: 2rem;
 }  
 
 .ac-text {
